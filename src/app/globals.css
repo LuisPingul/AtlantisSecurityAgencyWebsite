@@ -1,0 +1,240 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-obsidian: #070816;
+  --color-indigo-deep: #0F0D2E;
+  --color-indigo-royal: #1B1654;
+  --color-indigo-bright: #28207A;
+  --color-gold: #E5B63B;
+  --color-gold-light: #F5D576;
+  --color-gold-dark: #B8861A;
+  --color-cyan-signal: #00C2F0;
+  --color-alabaster: #F6F5F0;
+  --color-ink: #11102B;
+  --color-ink-muted: #4A4968;
+
+  --font-sans: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-cinzel), Georgia, serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  --bg-obsidian: #070816;
+  --bg-indigo: #13103A;
+  --bg-royal: #1D1862;
+  --accent-gold: #E5B63B;
+  --accent-gold-light: #F6D87B;
+  --accent-gold-dark: #B78419;
+  --accent-cyan: #00C2F0;
+  --surface-alabaster: #F6F5F0;
+  --surface-white: #FFFFFF;
+  --ink-primary: #11102B;
+  --ink-muted: #4A4968;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--bg-obsidian);
+  color: var(--ink-primary);
+  font-family: var(--font-sans);
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Signature Metallic Gold Gradient Text & Accents */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #F8E195 0%, #E5B63B 48%, #C6921E 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-gold-metallic {
+  background: linear-gradient(135deg, #F6D87B 0%, #E5B63B 55%, #C6921E 100%);
+}
+
+.bg-gold-metallic:hover {
+  background: linear-gradient(135deg, #FAE59E 0%, #ECC24D 55%, #D39E27 100%);
+}
+
+/* Signature Atlantis Emblem Radial Surface */
+.bg-imperial-mesh {
+  background-color: #070816;
+  background-image:
+    radial-gradient(ellipse 70% 55% at 80% 15%, rgba(39, 31, 134, 0.55) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 45% at 15% 85%, rgba(0, 194, 240, 0.10) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 35% at 50% 0%, rgba(229, 182, 59, 0.08) 0%, transparent 60%);
+}
+
+.bg-tactical-grid {
+  background-image:
+    linear-gradient(to right, rgba(229, 182, 59, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(229, 182, 59, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Greek Key Meander Border Pattern inspired by the Atlantis Seal */
+.greek-key-rule {
+  height: 10px;
+  width: 100%;
+  background-repeat: repeat-x;
+  background-position: center;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='10' viewBox='0 0 24 10' fill='none'%3E%3Cpath d='M0 9H22V1H8V6H14V4H11V3H17V7H5V1H0' stroke='%23E5B63B' stroke-opacity='0.45' stroke-width='1.1'/%3E%3C/svg%3E");
+}
+
+/* Ambient Status Pulse — Opt-in only under no-preference reduced motion */
+@keyframes signal-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1.35);
+  }
+}
+
+.signal-dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: var(--accent-cyan);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .signal-dot {
+    animation: signal-pulse 2.4s ease-in-out infinite;
+  }
+}
+
+/* ==========================================================================
+   Modern Top-Layer Native <dialog> (light-dismiss + animate-to-from-top-layer
+   + prevent-page-scroll-under-modal-dialog)
+   ========================================================================== */
+dialog.atlantis-dialog {
+  opacity: 0;
+  margin: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  max-width: min(92vw, 48rem);
+  max-height: min(88dvh, 52rem);
+  width: 100%;
+  overflow: auto;
+  transition-property: opacity, transform, display, overlay;
+  transition-duration: 0.28s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  /* Separate declaration so older browsers don't discard the whole transition */
+  transition-behavior: allow-discrete;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  dialog.atlantis-dialog {
+    transform: translateY(12px) scale(0.96);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  dialog.atlantis-dialog {
+    transition-duration: 0.1s;
+  }
+}
+
+dialog.atlantis-dialog:modal {
+  /* Prevent scroll chaining inside the modal to the underlying page */
+  overscroll-behavior: contain;
+}
+
+dialog.atlantis-dialog::backdrop {
+  /* Required: make ::backdrop a non-scrollable scroll container to contain scroll */
+  overflow: hidden;
+  overscroll-behavior: contain;
+  background-color: rgba(7, 8, 22, 0);
+  backdrop-filter: blur(0px);
+  transition-property: background-color, backdrop-filter, display, overlay;
+  transition-duration: 0.28s;
+  transition-timing-function: ease-out;
+  transition-behavior: allow-discrete;
+}
+
+/* Open state with :where(:not([data-closing])) exit fallback for Firefox/Safari */
+dialog.atlantis-dialog[open]:where(:not([data-closing])) {
+  opacity: 1;
+
+  @starting-style {
+    opacity: 0;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    transform: translateY(0) scale(1);
+
+    @starting-style {
+      transform: translateY(12px) scale(0.96);
+    }
+  }
+
+  &::backdrop {
+    background-color: rgba(7, 8, 22, 0.78);
+    backdrop-filter: blur(6px);
+
+    @starting-style {
+      background-color: rgba(7, 8, 22, 0);
+      backdrop-filter: blur(0px);
+    }
+  }
+}
+
+/* ==========================================================================
+   Accessible Post-Interaction Form Validation (:user-invalid / :user-valid)
+   ========================================================================== */
+.atlantis-field-error {
+  display: none;
+  color: #B91C1C;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  margin-top: 0.35rem;
+}
+
+.atlantis-input:is(:user-invalid, .user-invalid-fallback) {
+  border-color: #DC2626;
+  background-color: #FEF2F2;
+}
+
+.atlantis-input:is(:user-invalid, .user-invalid-fallback) + .atlantis-field-error {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.atlantis-input:is(:user-valid, .user-valid-fallback) {
+  border-color: #15803D;
+}
+
+/* Accessible visually-hidden utility for live region announcer */
+.visually-hidden:where(:not(:focus-within, :active)) {
+  position: absolute !important;
+  clip-path: inset(50%) !important;
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+
+/* Keyboard Focus Ring */
+:focus-visible {
+  outline: 2px solid #E5B63B;
+  outline-offset: 2px;
+}
