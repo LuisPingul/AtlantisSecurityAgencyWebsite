@@ -9,6 +9,7 @@ import {
   Radio,
 } from "lucide-react";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { BASE_PATH } from "@/data/company";
 import {
   SUPERVISION_PILLARS,
   TECH_HUMAN_PILLARS,
@@ -32,7 +33,7 @@ export function TechAndSupervisionSection() {
             <figure className="overflow-hidden rounded-md border border-slate-200 bg-[#081120]">
               <div className="relative aspect-[16/10.5] w-full">
                 <Image
-                  src="/images/operations/cctv-command.jpg"
+                  src={`${BASE_PATH}/images/operations/cctv-command.jpg`}
                   alt="Atlantis surveillance operator monitoring multi-feed CCTV displays"
                   fill
                   sizes="(max-width: 1024px) 100vw, 48vw"
@@ -147,7 +148,7 @@ export function TechAndSupervisionSection() {
             <div className="mt-6 grid grid-cols-2 gap-3">
               <div className="relative aspect-[16/10] overflow-hidden rounded-md border border-slate-200">
                 <Image
-                  src="/images/operations/campus-seminar-2.jpg"
+                  src={`${BASE_PATH}/images/operations/campus-seminar-2.jpg`}
                   alt="Atlantis security awareness seminar at Jose Maria College Foundation College of Law"
                   fill
                   sizes="(max-width: 768px) 50vw, 22vw"
@@ -157,7 +158,7 @@ export function TechAndSupervisionSection() {
               </div>
               <div className="relative aspect-[16/10] overflow-hidden rounded-md border border-slate-200">
                 <Image
-                  src="/images/operations/campus-seminar-1.jpg"
+                  src={`${BASE_PATH}/images/operations/campus-seminar-1.jpg`}
                   alt="Atlantis room-to-room student safety briefing session"
                   fill
                   sizes="(max-width: 768px) 50vw, 22vw"

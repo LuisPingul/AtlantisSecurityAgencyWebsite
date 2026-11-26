@@ -48,6 +48,17 @@ export function InquiryHandoffForm({
   const [submittedSummary, setSubmittedSummary] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
 
+  // Hydrate optional URL query parameters (?service=...&sector=...&region=...) on static pages
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const qsService = params.get("service");
+    const qsRegion = params.get("region");
+    const qsSector = params.get("sector");
+    if (qsService) setService(qsService);
+    if (qsRegion) setLocation(qsRegion);
+    if (qsSector) setNotes((prev) => prev || `Facility Type: ${qsSector}`);
+  }, []);
+
   // Sync :user-invalid with aria-invalid and dynamic aria-describedby per modern-web-guidance
   useEffect(() => {
     const form = formRef.current;

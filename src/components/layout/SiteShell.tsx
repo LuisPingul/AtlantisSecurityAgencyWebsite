@@ -19,7 +19,7 @@ import {
   X,
   ArrowUpRight,
 } from "lucide-react";
-import { COMPANY } from "@/data/company";
+import { BASE_PATH, COMPANY } from "@/data/company";
 import { ComplianceModal } from "@/components/ui/ComplianceModal";
 import { GreekKeyDivider } from "@/components/ui/GreekKeyDivider";
 
@@ -127,7 +127,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
           <Link href="/" className="group flex items-center gap-3">
             <div className="relative h-11 w-11 shrink-0 sm:h-12 sm:w-12">
               <Image
-                src="/images/brand/atlantis-emblem.png"
+                src={`${BASE_PATH}/images/brand/atlantis-emblem.png`}
                 alt="Atlantis Security Agency Inc. Official Seal"
                 fill
                 sizes="48px"
@@ -261,7 +261,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
               <div className="flex items-center gap-3.5">
                 <div className="relative h-14 w-14 shrink-0">
                   <Image
-                    src="/images/brand/atlantis-emblem.png"
+                    src={`${BASE_PATH}/images/brand/atlantis-emblem.png`}
                     alt="Atlantis Security Agency Inc. Official Emblem"
                     fill
                     sizes="56px"

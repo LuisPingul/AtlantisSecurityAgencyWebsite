@@ -158,3 +158,35 @@ Copy this template to append a new entry at the bottom of the **Log Entries** se
 - **Tests Run**: Token audit grep, `npx tsc --noEmit`, `npm run lint`, `graphify` health check.
 - **Result**: Zero TypeScript errors, zero ESLint warnings, zero AI purple/cyan or slide-leak remnants, and healthy knowledge graph generated.
 - **Next Steps**: Optional visual check in browser or commit/push to `main`.
+
+---
+
+### [TASK-20261126-02] Configure Static Export & GitHub Pages CI/CD for Board Presentation
+
+- **Date**: 2026-11-26
+- **Task Description**: Resolve GitHub Pages 404 by configuring Next.js static HTML export, `basePath`-safe image URLs, static `/contact` query parameter hydration, and automated GitHub Actions Pages deployment.
+- **Summary of Changes**:
+  - Updated `next.config.ts` with `output: "export"`, `trailingSlash: true`, conditional `basePath` (`NEXT_PUBLIC_BASE_PATH`), and `images: { unoptimized: true }` (with `shortcut:` comment).
+  - Exported `BASE_PATH` in `src/data/company.ts` and prefixed all `/images/...` references across `layout.tsx`, `SiteShell.tsx`, `HeroSection.tsx`, `TechAndSupervisionSection.tsx`, `about/page.tsx`, `welfare.ts`, and `clients.ts`.
+  - Converted `src/app/contact/page.tsx` to a static page and hydrated `?service`, `?sector`, and `?region` query params client-side in `InquiryHandoffForm.tsx`.
+  - Added `public/.nojekyll` and `.github/workflows/deploy-pages.yml`.
+- **Files Changed**:
+  - `next.config.ts` (Modified)
+  - `public/.nojekyll` (Created)
+  - `.github/workflows/deploy-pages.yml` (Created)
+  - `src/data/company.ts` (Modified)
+  - `src/data/welfare.ts` (Modified)
+  - `src/data/clients.ts` (Modified)
+  - `src/app/layout.tsx` (Modified)
+  - `src/app/about/page.tsx` (Modified)
+  - `src/app/contact/page.tsx` (Modified)
+  - `src/components/layout/SiteShell.tsx` (Modified)
+  - `src/components/home/HeroSection.tsx` (Modified)
+  - `src/components/home/TechAndSupervisionSection.tsx` (Modified)
+  - `src/components/forms/InquiryHandoffForm.tsx` (Modified)
+  - `docs/PROJECT_STATE.md` (Modified)
+  - `docs/DECISIONS.md` (Modified)
+  - `docs/TASK_LOG.md` (Modified)
+- **Tests Run**: `npx tsc --noEmit`, `npm run lint`, `NEXT_PUBLIC_BASE_PATH=/AtlantisSecurityAgencyWebsite npm run build`, and HTML asset path inspection in `out/index.html`.
+- **Result**: Static export builds `out/` cleanly with verified subpath URLs; committed and pushed to `origin/main`.
+- **Next Steps**: Ensure GitHub repo Settings → Pages → Source is set to "GitHub Actions".

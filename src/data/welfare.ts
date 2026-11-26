@@ -1,3 +1,5 @@
+import { BASE_PATH } from "@/data/company";
+
 export interface WelfareStage {
   step: string;
   title: string;
@@ -176,37 +178,37 @@ export const COMMUNITY_ADVOCACY = {
 
 export const OPERATIONS_GALLERY = [
   {
-    src: "/images/operations/briefing-formation.jpg",
+    src: `${BASE_PATH}/images/operations/briefing-formation.jpg`,
     title: "Pre-Deployment Formation & Post Briefing",
     caption: "Uniformed screening personnel receiving lane protocol instructions prior to multi-gate event deployment.",
     tag: "Field Readiness",
   },
   {
-    src: "/images/operations/campus-seminar-2.jpg",
+    src: `${BASE_PATH}/images/operations/campus-seminar-2.jpg`,
     title: "Institutional Security Awareness Seminar",
     caption: "Atlantis leadership conducting campus-wide security awareness briefings at Jose Maria College Foundation, Inc.",
     tag: "Campus Advocacy",
   },
   {
-    src: "/images/operations/campus-seminar-1.jpg",
+    src: `${BASE_PATH}/images/operations/campus-seminar-1.jpg`,
     title: "Room-to-Room Safety Briefing",
     caption: "Direct classroom-level student and faculty safety orientations fostering proactive hazard awareness.",
     tag: "Room-to-Room Seminar",
   },
   {
-    src: "/images/operations/cctv-command.jpg",
+    src: `${BASE_PATH}/images/operations/cctv-command.jpg`,
     title: "24/7 Surveillance & CCTV Coordination",
     caption: "Multi-screen live monitoring backing up field officers—technology supporting trained human security.",
     tag: "Tech + Human",
   },
   {
-    src: "/images/operations/metal-detector-lane.jpg",
+    src: `${BASE_PATH}/images/operations/metal-detector-lane.jpg`,
     title: "Multi-Lane Metal Detector & X-Ray Operations",
     caption: "High-throughput screening lanes with walk-through metal detectors and baggage X-ray scanners.",
     tag: "Access Control",
   },
   {
-    src: "/images/operations/operations-briefing.jpg",
+    src: `${BASE_PATH}/images/operations/operations-briefing.jpg`,
     title: "Large-Scale Venue Operations Alignment",
     caption: "Coordinated crowd-management briefing with venue stakeholders and marshaling personnel.",
     tag: "Event Command",

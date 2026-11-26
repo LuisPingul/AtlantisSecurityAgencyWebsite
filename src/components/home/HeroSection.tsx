@@ -9,7 +9,7 @@ import {
   PhoneCall,
   ShieldCheck,
 } from "lucide-react";
-import { COMPANY } from "@/data/company";
+import { BASE_PATH, COMPANY } from "@/data/company";
 import { useComplianceModal } from "@/components/layout/SiteShell";
 
 export function HeroSection() {
@@ -23,7 +23,7 @@ export function HeroSection() {
         className="pointer-events-none absolute inset-0 opacity-15"
       >
         <Image
-          src="/images/hero/night-architecture.jpg"
+          src={`${BASE_PATH}/images/hero/night-architecture.jpg`}
           alt=""
           fill
           sizes="100vw"
@@ -122,7 +122,7 @@ export function HeroSection() {
               {/* Authentic Uniformed Atlantis Officers Photo — LCP Priority */}
               <div className="relative aspect-[4/3.5] w-full overflow-hidden bg-[#081120]">
                 <Image
-                  src="/images/hero/officers-team.jpg"
+                  src={`${BASE_PATH}/images/hero/officers-team.jpg`}
                   alt="Four uniformed Atlantis Security Agency Inc. licensed security officers standing at multi-lane walk-through metal detector checkpoints"
                   fill
                   sizes="(max-width: 1024px) 100vw, 44vw"

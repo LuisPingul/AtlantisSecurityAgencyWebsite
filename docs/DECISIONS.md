@@ -88,3 +88,14 @@ When recording a new decision, copy the block below and append it under the **Re
 - **Reason**: Corporate and institutional security buyers immediately distrust generic AI-generated SaaS styling and leaked presentation slide numbers; crisp hairline ledgers, CSS Subgrid alignment, balanced typography (`text-wrap: balance` / `pretty`), and true heraldic navy/brass authority convey real-world operational credibility.
 - **Alternatives Considered**: Keeping the indigo/neon-cyan mesh palette or adding heavy animation libraries.
 - **Impact**: Higher WCAG contrast, cleaner institutional aesthetic across all 6 routes, smaller component code footprint, explicit `shortcut:` debt tracking, and queryable codebase architecture in `graphify-out/`.
+
+---
+
+### [ADR-20261126-02] Next.js Static Export (`output: "export"`) for GitHub Pages Board Presentation
+
+- **Date**: 2026-11-26
+- **Status**: Accepted
+- **Decision**: Enable Next.js static HTML export (`output: "export"`, `trailingSlash: true`, `images: { unoptimized: true }`) with dynamic `NEXT_PUBLIC_BASE_PATH` asset prefixing, client-side URL query hydration on `/contact`, and automated GitHub Actions deployment (`.github/workflows/deploy-pages.yml`).
+- **Reason**: User is presenting the website to the board via GitHub Pages (`https://luispingul.github.io/AtlantisSecurityAgencyWebsite/`), which requires pre-rendered static HTML files and `/AtlantisSecurityAgencyWebsite` subpath compatibility.
+- **Alternatives Considered**: Deploying on Vercel (deferred until post-board production hosting decision).
+- **Impact**: Every route pre-renders cleanly to `out/*/index.html` and deploys automatically on push to `main`, while local `npm run dev` continues working at root `/` when `NEXT_PUBLIC_BASE_PATH` is unset.

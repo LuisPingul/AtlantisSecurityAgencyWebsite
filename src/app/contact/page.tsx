@@ -16,17 +16,7 @@ export const metadata: Metadata = {
     "Request a PADPAO-compliant security proposal or free physical security risk audit from Atlantis Security Agency Inc. in Kidapawan City and Davao City.",
 };
 
-export default async function ContactPage({
-  searchParams,
-}: {
-  searchParams: Promise<{
-    service?: string;
-    sector?: string;
-    region?: string;
-  }>;
-}) {
-  const params = await searchParams;
-
+export default function ContactPage() {
   return (
     <>
       {/* Page Hero */}
@@ -156,11 +146,7 @@ export default async function ContactPage({
 
             {/* Right Column: Validated Proposal & Inquiry Handoff Form */}
             <div className="lg:col-span-7">
-              <InquiryHandoffForm
-                defaultService={params.service || ""}
-                defaultSector={params.sector || ""}
-                defaultRegion={params.region || ""}
-              />
+              <InquiryHandoffForm />
             </div>
           </div>
         </div>

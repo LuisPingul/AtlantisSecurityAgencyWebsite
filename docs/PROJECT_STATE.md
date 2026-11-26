@@ -21,6 +21,9 @@ Establish a premier, enterprise-grade digital web platform for **Atlantis Securi
 
 ```
 AtlantisSecurityAgency/
+├── .github/
+│   └── workflows/
+│       └── deploy-pages.yml           # Automated Next.js static export to GitHub Pages
 ├── AGENTS.md                          # Mandatory agent instructions and protocols
 ├── design-system/
 │   └── atlantis-security-agency/
@@ -96,6 +99,7 @@ AtlantisSecurityAgency/
 - [x] **Removed Obsolete Content**: Removed the 40 FT ISO Container Security Checkpoint section as directed.
 - [x] **Editorial Anti-AI-Slop UI/UX & Ponytail Refinement**: Replaced purple/neon-cyan meshes, leaked slide numbers, and nested bubble cards with Maritime Dress-Uniform Navy & Warm Stone architectural ledgers, CSS `subgrid`, balanced typography, 44px touch targets, and `shortcut:` debt markers (`MASTER.md`).
 - [x] **Persistent Knowledge Graph (`graphify`)**: Generated 257-node / 475-edge knowledge graph across code, docs, and visual assets in `graphify-out/`.
+- [x] **GitHub Pages Static Export & CI/CD**: Configured `output: "export"`, `trailingSlash: true`, `NEXT_PUBLIC_BASE_PATH` asset prefixing, static `/contact` query hydration, and `.github/workflows/deploy-pages.yml` for board presentation on GitHub Pages.
 - [x] **Clean Verification**: TypeScript check (`npx tsc --noEmit`) and ESLint (`npm run lint`) both pass with zero errors.
 
 ---

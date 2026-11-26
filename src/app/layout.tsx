@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Cinzel, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { SiteShell } from "@/components/layout/SiteShell";
-import { COMPANY } from "@/data/company";
+import { BASE_PATH, COMPANY } from "@/data/company";
 
 const cinzel = Cinzel({
   subsets: ["latin"],
@@ -43,8 +43,8 @@ export const metadata: Metadata = {
     "Industrial Security Services Philippines",
   ],
   icons: {
-    icon: "/images/brand/atlantis-icon.png",
-    apple: "/images/brand/atlantis-icon.png",
+    icon: `${BASE_PATH}/images/brand/atlantis-icon.png`,
+    apple: `${BASE_PATH}/images/brand/atlantis-icon.png`,
   },
   openGraph: {
     type: "website",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     description: COMPANY.heroSubheadline,
     images: [
       {
-        url: "/images/brand/atlantis-emblem.png",
+        url: `${BASE_PATH}/images/brand/atlantis-emblem.png`,
         width: 768,
         height: 768,
         alt: "Atlantis Security Agency Inc. Official Seal",

@@ -11,7 +11,7 @@ import {
   Target,
   UserCheck,
 } from "lucide-react";
-import { COMPANY, CORE_VALUES, CREDENTIALS } from "@/data/company";
+import { BASE_PATH, COMPANY, CORE_VALUES, CREDENTIALS } from "@/data/company";
 import { COMMUNITY_ADVOCACY } from "@/data/welfare";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { GreekKeyDivider } from "@/components/ui/GreekKeyDivider";
@@ -44,7 +44,7 @@ export default function AboutPage() {
             <div className="flex justify-center lg:col-span-4 lg:justify-end">
               <div className="relative h-40 w-40 sm:h-48 sm:w-48">
                 <Image
-                  src="/images/brand/atlantis-emblem.png"
+                  src={`${BASE_PATH}/images/brand/atlantis-emblem.png`}
                   alt="Atlantis Security Agency Inc. Official Seal"
                   fill
                   sizes="192px"
