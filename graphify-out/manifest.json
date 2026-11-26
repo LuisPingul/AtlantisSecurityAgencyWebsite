@@ -1,0 +1,428 @@
+{
+  "eslint.config.mjs": {
+    "mtime": 1795519820.9757311,
+    "seen": 1795662042.759744,
+    "ast_hash": "b43f470c5df5e9ff4c2f5e0bd917a881",
+    "semantic_hash": "b43f470c5df5e9ff4c2f5e0bd917a881"
+  },
+  "next.config.ts": {
+    "mtime": 1795519816.402667,
+    "seen": 1795662042.759753,
+    "ast_hash": "09a90d13dee254425cc59365f5c3de44",
+    "semantic_hash": "09a90d13dee254425cc59365f5c3de44"
+  },
+  "package.json": {
+    "mtime": 1795519814.6401138,
+    "seen": 1795662042.759755,
+    "ast_hash": "1bc0fc2636a9cd8c4d8fc0d2afd11d4e",
+    "semantic_hash": "1bc0fc2636a9cd8c4d8fc0d2afd11d4e"
+  },
+  "postcss.config.mjs": {
+    "mtime": 1795519819.0873718,
+    "seen": 1795662042.759756,
+    "ast_hash": "239f3ebf717465dc636818a1a619398d",
+    "semantic_hash": "239f3ebf717465dc636818a1a619398d"
+  },
+  "src/app/about/page.tsx": {
+    "mtime": 1795661695.1648476,
+    "seen": 1795662042.759757,
+    "ast_hash": "897075435c4f69ea6070e2c040e70ef4",
+    "semantic_hash": "897075435c4f69ea6070e2c040e70ef4"
+  },
+  "src/app/careers/page.tsx": {
+    "mtime": 1795661489.9432771,
+    "seen": 1795662042.759758,
+    "ast_hash": "bc251339c1b7baf803fdf60b860a3df3",
+    "semantic_hash": "bc251339c1b7baf803fdf60b860a3df3"
+  },
+  "src/app/contact/page.tsx": {
+    "mtime": 1795661695.9753172,
+    "seen": 1795662042.7597592,
+    "ast_hash": "5150cd013a327cfa5129c2dbb0ecf701",
+    "semantic_hash": "5150cd013a327cfa5129c2dbb0ecf701"
+  },
+  "src/app/layout.tsx": {
+    "mtime": 1795660843.9212925,
+    "seen": 1795662042.75976,
+    "ast_hash": "c154ea56e13ce32d28bc074d97ad1ed3",
+    "semantic_hash": "c154ea56e13ce32d28bc074d97ad1ed3"
+  },
+  "src/app/page.tsx": {
+    "mtime": 1795608786.0761948,
+    "seen": 1795662042.7597609,
+    "ast_hash": "5a368a86348f75dffa7b21ff95886fcf",
+    "semantic_hash": "5a368a86348f75dffa7b21ff95886fcf"
+  },
+  "src/app/services/page.tsx": {
+    "mtime": 1795661487.3308713,
+    "seen": 1795662042.7597609,
+    "ast_hash": "448a538487d79237764cab0ef9fdf77f",
+    "semantic_hash": "448a538487d79237764cab0ef9fdf77f"
+  },
+  "src/app/welfare-standards/page.tsx": {
+    "mtime": 1795661488.6234577,
+    "seen": 1795662042.7597618,
+    "ast_hash": "8e0fa25ff6f475a6f25c0ce9a8742b04",
+    "semantic_hash": "8e0fa25ff6f475a6f25c0ce9a8742b04"
+  },
+  "src/components/forms/GuardApplicationForm.tsx": {
+    "mtime": 1795661493.71634,
+    "seen": 1795662042.759763,
+    "ast_hash": "cf292c9fddfd6a57ad6be000dedbba6b",
+    "semantic_hash": "cf292c9fddfd6a57ad6be000dedbba6b"
+  },
+  "src/components/forms/InquiryHandoffForm.tsx": {
+    "mtime": 1795661492.3823318,
+    "seen": 1795662042.759764,
+    "ast_hash": "f8652fede73c51e019af6aeea5ce6469",
+    "semantic_hash": "f8652fede73c51e019af6aeea5ce6469"
+  },
+  "src/components/home/ClientShowcase.tsx": {
+    "mtime": 1795661139.0365107,
+    "seen": 1795662042.759765,
+    "ast_hash": "26d12c08fbfc3630a294c46a73f8b828",
+    "semantic_hash": "26d12c08fbfc3630a294c46a73f8b828"
+  },
+  "src/components/home/CredentialsRibbon.tsx": {
+    "mtime": 1795661135.0746737,
+    "seen": 1795662042.759766,
+    "ast_hash": "6b558c48b01f0b4441a30d5a8f68ae7b",
+    "semantic_hash": "6b558c48b01f0b4441a30d5a8f68ae7b"
+  },
+  "src/components/home/HeroSection.tsx": {
+    "mtime": 1795661134.1271775,
+    "seen": 1795662042.759766,
+    "ast_hash": "32a1a90506d3dc3179f8a91c7d530f3c",
+    "semantic_hash": "32a1a90506d3dc3179f8a91c7d530f3c"
+  },
+  "src/components/home/ProposalScopeBuilder.tsx": {
+    "mtime": 1795661140.0527952,
+    "seen": 1795662042.759767,
+    "ast_hash": "381baed9875c38f7de4039629b10bc38",
+    "semantic_hash": "381baed9875c38f7de4039629b10bc38"
+  },
+  "src/components/home/ServicesShowcase.tsx": {
+    "mtime": 1795661136.9474092,
+    "seen": 1795662042.759768,
+    "ast_hash": "df4210f20387417286024080f15b5653",
+    "semantic_hash": "df4210f20387417286024080f15b5653"
+  },
+  "src/components/home/TechAndSupervisionSection.tsx": {
+    "mtime": 1795661138.005676,
+    "seen": 1795662042.7597692,
+    "ast_hash": "e0e9816c67f763237705e2f8ca1f9116",
+    "semantic_hash": "e0e9816c67f763237705e2f8ca1f9116"
+  },
+  "src/components/home/WelfareMultiplier.tsx": {
+    "mtime": 1795661136.0086408,
+    "seen": 1795662042.7597702,
+    "ast_hash": "5abe6045a72a9d9fa1849370ebff4757",
+    "semantic_hash": "5abe6045a72a9d9fa1849370ebff4757"
+  },
+  "src/components/layout/SiteShell.tsx": {
+    "mtime": 1795660846.1782541,
+    "seen": 1795662042.7597702,
+    "ast_hash": "7d5e15fb69c5b03bec7f2f6952be4eaa",
+    "semantic_hash": "7d5e15fb69c5b03bec7f2f6952be4eaa"
+  },
+  "src/components/ui/ComplianceModal.tsx": {
+    "mtime": 1795660847.1811016,
+    "seen": 1795662042.7597709,
+    "ast_hash": "c320f23ae3ab4f846b129568d64b936c",
+    "semantic_hash": "c320f23ae3ab4f846b129568d64b936c"
+  },
+  "src/components/ui/GreekKeyDivider.tsx": {
+    "mtime": 1795523807.7246106,
+    "seen": 1795662042.7597718,
+    "ast_hash": "8df278b788d760c3037151872a76b109",
+    "semantic_hash": "8df278b788d760c3037151872a76b109"
+  },
+  "src/components/ui/SectionHeader.tsx": {
+    "mtime": 1795660844.9936259,
+    "seen": 1795662042.759773,
+    "ast_hash": "8af1dfd1ebb6ee73e5264009f3530322",
+    "semantic_hash": "8af1dfd1ebb6ee73e5264009f3530322"
+  },
+  "src/data/careers.ts": {
+    "mtime": 1795523593.4153323,
+    "seen": 1795662042.759774,
+    "ast_hash": "f84ac0d127626a422017be334b77ac47",
+    "semantic_hash": "f84ac0d127626a422017be334b77ac47"
+  },
+  "src/data/clients.ts": {
+    "mtime": 1795523591.7996109,
+    "seen": 1795662042.759774,
+    "ast_hash": "b1e04f72b1edfc2c8ddfa075ebfceef4",
+    "semantic_hash": "b1e04f72b1edfc2c8ddfa075ebfceef4"
+  },
+  "src/data/company.ts": {
+    "mtime": 1795523584.9612496,
+    "seen": 1795662042.759775,
+    "ast_hash": "28aec0115dbf2fa5e50a514a02f1df70",
+    "semantic_hash": "28aec0115dbf2fa5e50a514a02f1df70"
+  },
+  "src/data/services.ts": {
+    "mtime": 1795608908.7432635,
+    "seen": 1795662042.759776,
+    "ast_hash": "5e80905f07e7a2b8d86db3bde720ee9a",
+    "semantic_hash": "5e80905f07e7a2b8d86db3bde720ee9a"
+  },
+  "src/data/welfare.ts": {
+    "mtime": 1795523589.1971927,
+    "seen": 1795662042.759777,
+    "ast_hash": "abb57450e432a81de25a7f3d8f822b0a",
+    "semantic_hash": "abb57450e432a81de25a7f3d8f822b0a"
+  },
+  "tsconfig.json": {
+    "mtime": 1795519817.9081898,
+    "seen": 1795662042.759778,
+    "ast_hash": "bb885b0d42d0beeb5889269270182a58",
+    "semantic_hash": "bb885b0d42d0beeb5889269270182a58"
+  },
+  "AGENTS.md": {
+    "mtime": 1795610458.7783904,
+    "seen": 1795662042.759778,
+    "ast_hash": "0a9e7394b8bc033208f3a10d2d540d11",
+    "semantic_hash": "0a9e7394b8bc033208f3a10d2d540d11"
+  },
+  "design-system/atlantis-security-agency/MASTER.md": {
+    "mtime": 1795660253.4866502,
+    "seen": 1795662042.759779,
+    "ast_hash": "18b17ce6e0014559b150721df25de5ff",
+    "semantic_hash": "18b17ce6e0014559b150721df25de5ff"
+  },
+  "docs/DECISIONS.md": {
+    "mtime": 1795661554.0355067,
+    "seen": 1795662042.7597802,
+    "ast_hash": "42767e93487a02b6afaeda7ad861ac09",
+    "semantic_hash": "42767e93487a02b6afaeda7ad861ac09"
+  },
+  "docs/PROJECT_STATE.md": {
+    "mtime": 1795661552.509034,
+    "seen": 1795662042.7597811,
+    "ast_hash": "0c3231ffb14a6994d4fdabc989788321",
+    "semantic_hash": "0c3231ffb14a6994d4fdabc989788321"
+  },
+  "docs/TASK_LOG.md": {
+    "mtime": 1795661555.0906863,
+    "seen": 1795662042.7597811,
+    "ast_hash": "37ce41fd62b9eab6ccefc66abb6f9c7c",
+    "semantic_hash": "37ce41fd62b9eab6ccefc66abb6f9c7c"
+  },
+  "promo-video-script.md": {
+    "mtime": 1795605302.0919793,
+    "seen": 1795662042.7597818,
+    "ast_hash": "9b10cb8af01ce78c74577165af8c21b8",
+    "semantic_hash": "9b10cb8af01ce78c74577165af8c21b8"
+  },
+  "storyboard-prompts.md": {
+    "mtime": 1795605432.8659773,
+    "seen": 1795662042.759783,
+    "ast_hash": "be9ce364389bc9493013637feea237f1",
+    "semantic_hash": "be9ce364389bc9493013637feea237f1"
+  },
+  "public/images/brand/atlantis-emblem.png": {
+    "mtime": 1795606419.2430508,
+    "seen": 1795662042.759784,
+    "ast_hash": "aa9c0a699e004b6cea3a46f0c18b16e6",
+    "semantic_hash": "aa9c0a699e004b6cea3a46f0c18b16e6"
+  },
+  "public/images/brand/atlantis-icon.png": {
+    "mtime": 1795606419.3053668,
+    "seen": 1795662042.759785,
+    "ast_hash": "bab72521e433b654f6b0adb75056f29c",
+    "semantic_hash": "bab72521e433b654f6b0adb75056f29c"
+  },
+  "public/images/clients/deploy-7eleven.jpg": {
+    "mtime": 1795606420.2464466,
+    "seen": 1795662042.759786,
+    "ast_hash": "3372bdfafc1807d77875cad4bc43eff8",
+    "semantic_hash": "3372bdfafc1807d77875cad4bc43eff8"
+  },
+  "public/images/clients/deploy-alishas.jpg": {
+    "mtime": 1795606420.3757012,
+    "seen": 1795662042.759786,
+    "ast_hash": "a35f4755068fcc3c58882eca5815c071",
+    "semantic_hash": "a35f4755068fcc3c58882eca5815c071"
+  },
+  "public/images/clients/deploy-greengold.jpg": {
+    "mtime": 1795606420.2898815,
+    "seen": 1795662042.759787,
+    "ast_hash": "922dca97d3c0a41c82c57b7e1fdd648c",
+    "semantic_hash": "922dca97d3c0a41c82c57b7e1fdd648c"
+  },
+  "public/images/clients/deploy-jmcfi.jpg": {
+    "mtime": 1795606420.164534,
+    "seen": 1795662042.759788,
+    "ast_hash": "ea2f25f8748c60de15611d956f8523df",
+    "semantic_hash": "ea2f25f8748c60de15611d956f8523df"
+  },
+  "public/images/clients/deploy-qixiang.jpg": {
+    "mtime": 1795606420.3821745,
+    "seen": 1795662042.759789,
+    "ast_hash": "a66f28a6fb2b8f738350408807778c38",
+    "semantic_hash": "a66f28a6fb2b8f738350408807778c38"
+  },
+  "public/images/clients/deploy-waxis.jpg": {
+    "mtime": 1795606420.167173,
+    "seen": 1795662042.7597902,
+    "ast_hash": "91b45e17aa3f017922732fd83cc2fb1f",
+    "semantic_hash": "91b45e17aa3f017922732fd83cc2fb1f"
+  },
+  "public/images/clients/logo-7eleven.png": {
+    "mtime": 1795606420.4874432,
+    "seen": 1795662042.7597902,
+    "ast_hash": "30226ee635c0eabbc1d1024325c4c0c9",
+    "semantic_hash": "30226ee635c0eabbc1d1024325c4c0c9"
+  },
+  "public/images/clients/logo-alishas.png": {
+    "mtime": 1795606420.514663,
+    "seen": 1795662042.7597911,
+    "ast_hash": "7a94a82cba3171d62abef8c884a2beb2",
+    "semantic_hash": "7a94a82cba3171d62abef8c884a2beb2"
+  },
+  "public/images/clients/logo-goodluck.png": {
+    "mtime": 1795606420.636656,
+    "seen": 1795662042.759792,
+    "ast_hash": "2fa9faef4f73665c6c0056dd405798ef",
+    "semantic_hash": "2fa9faef4f73665c6c0056dd405798ef"
+  },
+  "public/images/clients/logo-greengold.png": {
+    "mtime": 1795606420.4911838,
+    "seen": 1795662042.7597928,
+    "ast_hash": "0992fc78db116d5d2160711871467e26",
+    "semantic_hash": "0992fc78db116d5d2160711871467e26"
+  },
+  "public/images/clients/logo-hdr.png": {
+    "mtime": 1795606420.623623,
+    "seen": 1795662042.7597928,
+    "ast_hash": "47c3cc82211c22ff582c7a4b99e5287d",
+    "semantic_hash": "47c3cc82211c22ff582c7a4b99e5287d"
+  },
+  "public/images/clients/logo-hmbp.png": {
+    "mtime": 1795606420.5380156,
+    "seen": 1795662042.759794,
+    "ast_hash": "096cde626eb96ddc292e326572a51393",
+    "semantic_hash": "096cde626eb96ddc292e326572a51393"
+  },
+  "public/images/clients/logo-jmcfi.png": {
+    "mtime": 1795606420.3924935,
+    "seen": 1795662042.759795,
+    "ast_hash": "9c2d5e58529f52211369998e09c6bf45",
+    "semantic_hash": "9c2d5e58529f52211369998e09c6bf45"
+  },
+  "public/images/clients/logo-qixiang.png": {
+    "mtime": 1795606420.518305,
+    "seen": 1795662042.759796,
+    "ast_hash": "80ac17c8e475cdd6bbe62767f7ec0ebc",
+    "semantic_hash": "80ac17c8e475cdd6bbe62767f7ec0ebc"
+  },
+  "public/images/clients/logo-waxis.png": {
+    "mtime": 1795606420.4344919,
+    "seen": 1795662042.759797,
+    "ast_hash": "9d4bf36b6356fbc8768d9b6151aade31",
+    "semantic_hash": "9d4bf36b6356fbc8768d9b6151aade31"
+  },
+  "public/images/container/after-checkpoint.jpg": {
+    "mtime": 1795606419.6867807,
+    "seen": 1795662042.759797,
+    "ast_hash": "65f776de0a2e10844914de444fcb3045",
+    "semantic_hash": "65f776de0a2e10844914de444fcb3045"
+  },
+  "public/images/container/before-perimeter.jpg": {
+    "mtime": 1795606419.680653,
+    "seen": 1795662042.759798,
+    "ast_hash": "a90944f4fe472808079ed495ca5abb3d",
+    "semantic_hash": "a90944f4fe472808079ed495ca5abb3d"
+  },
+  "public/images/container/floorplan-dimensions.jpg": {
+    "mtime": 1795606419.779103,
+    "seen": 1795662042.759799,
+    "ast_hash": "ece3e66be9f860df4384529aedaf2ba8",
+    "semantic_hash": "ece3e66be9f860df4384529aedaf2ba8"
+  },
+  "public/images/container/phase1-entry.jpg": {
+    "mtime": 1795606419.8201933,
+    "seen": 1795662042.7598,
+    "ast_hash": "08b008290a08b757155644be27bbb4d7",
+    "semantic_hash": "08b008290a08b757155644be27bbb4d7"
+  },
+  "public/images/container/phase1-xray.jpg": {
+    "mtime": 1795606419.8394368,
+    "seen": 1795662042.7598,
+    "ast_hash": "30ceda937798cb20349783846023158d",
+    "semantic_hash": "30ceda937798cb20349783846023158d"
+  },
+  "public/images/container/phase2-exit.jpg": {
+    "mtime": 1795606419.9575179,
+    "seen": 1795662042.7598011,
+    "ast_hash": "d4613702aa779c2fa9de7d96d628ee19",
+    "semantic_hash": "d4613702aa779c2fa9de7d96d628ee19"
+  },
+  "public/images/container/phase2-turnstiles.jpg": {
+    "mtime": 1795606419.9393373,
+    "seen": 1795662042.759802,
+    "ast_hash": "92c7656e4525c4c3c25658c811102319",
+    "semantic_hash": "92c7656e4525c4c3c25658c811102319"
+  },
+  "public/images/container/system-overview.jpg": {
+    "mtime": 1795606419.7402012,
+    "seen": 1795662042.7598028,
+    "ast_hash": "6df7aab88132ae4077890e0296ce62ee",
+    "semantic_hash": "6df7aab88132ae4077890e0296ce62ee"
+  },
+  "public/images/hero/night-architecture.jpg": {
+    "mtime": 1795606419.5272236,
+    "seen": 1795662042.7598028,
+    "ast_hash": "897eca95e3e3c05b609dd0a2ade12beb",
+    "semantic_hash": "897eca95e3e3c05b609dd0a2ade12beb"
+  },
+  "public/images/hero/officers-team.jpg": {
+    "mtime": 1795606419.4105315,
+    "seen": 1795662042.759804,
+    "ast_hash": "199e7064f642dbf0c861e6b8a51d019e",
+    "semantic_hash": "199e7064f642dbf0c861e6b8a51d019e"
+  },
+  "public/images/operations/briefing-formation.jpg": {
+    "mtime": 1795606420.0365698,
+    "seen": 1795662042.759805,
+    "ast_hash": "a3bc13b31a05c660cc8b7c61a07cfc70",
+    "semantic_hash": "a3bc13b31a05c660cc8b7c61a07cfc70"
+  },
+  "public/images/operations/campus-seminar-1.jpg": {
+    "mtime": 1795606420.099932,
+    "seen": 1795662042.759806,
+    "ast_hash": "ff53ff331a22ccf1b29dde4d8e07925b",
+    "semantic_hash": "ff53ff331a22ccf1b29dde4d8e07925b"
+  },
+  "public/images/operations/campus-seminar-2.jpg": {
+    "mtime": 1795606420.1189647,
+    "seen": 1795662042.7598069,
+    "ast_hash": "46593a0cbaafb905f32b01099d3fb2be",
+    "semantic_hash": "46593a0cbaafb905f32b01099d3fb2be"
+  },
+  "public/images/operations/campus-seminar-3.jpg": {
+    "mtime": 1795606420.1396112,
+    "seen": 1795662042.759808,
+    "ast_hash": "0d0c54489bd529b071302f7fda680b8f",
+    "semantic_hash": "0d0c54489bd529b071302f7fda680b8f"
+  },
+  "public/images/operations/cctv-command.jpg": {
+    "mtime": 1795606420.00114,
+    "seen": 1795662042.759808,
+    "ast_hash": "259f1570ac5b4eedf25b7f20461092c9",
+    "semantic_hash": "259f1570ac5b4eedf25b7f20461092c9"
+  },
+  "public/images/operations/metal-detector-lane.jpg": {
+    "mtime": 1795606420.066829,
+    "seen": 1795662042.759809,
+    "ast_hash": "1011c1c5602f27a083d9e35215d0997e",
+    "semantic_hash": "1011c1c5602f27a083d9e35215d0997e"
+  },
+  "public/images/operations/operations-briefing.jpg": {
+    "mtime": 1795606420.1607993,
+    "seen": 1795662042.75981,
+    "ast_hash": "8a876a01e81b418f25a9e69ce2ad4ce5",
+    "semantic_hash": "8a876a01e81b418f25a9e69ce2ad4ce5"
+  }
+}

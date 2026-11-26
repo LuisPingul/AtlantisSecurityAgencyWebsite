@@ -77,3 +77,14 @@ When recording a new decision, copy the block below and append it under the **Re
 - **Reason**: Eliminates dependency on third-party transactional email providers before domain DNS is configured, while allowing instantaneous lead delivery to the agency manager.
 - **Alternatives Considered**: Full serverless backend with database and transactional email service.
 - **Impact**: Zero external API failure points or cost during MVP evaluation; forms can be progressively enhanced with server actions later.
+
+---
+
+### [ADR-20261126-01] Editorial Anti-AI-Slop Design System, Ponytail Discipline & Graphify Knowledge Graph
+
+- **Date**: 2026-11-26
+- **Status**: Accepted
+- **Decision**: Replace AI-template visual patterns (violet-purple `#1B1654`/`#28207A` radial meshes, neon cyan `#00C2F0` pills, `Sparkles` icons, split-gradient headings on every section, nested `rounded-2xl` bubble cards, and leaked `"Slide X"` deck labels) with a maritime dress-uniform navy & warm stone editorial system (`design-system/atlantis-security-agency/MASTER.md`), enforce `ponytail` lean code & `shortcut:` markers, and maintain a persistent `graphify` knowledge graph in `graphify-out/`.
+- **Reason**: Corporate and institutional security buyers immediately distrust generic AI-generated SaaS styling and leaked presentation slide numbers; crisp hairline ledgers, CSS Subgrid alignment, balanced typography (`text-wrap: balance` / `pretty`), and true heraldic navy/brass authority convey real-world operational credibility.
+- **Alternatives Considered**: Keeping the indigo/neon-cyan mesh palette or adding heavy animation libraries.
+- **Impact**: Higher WCAG contrast, cleaner institutional aesthetic across all 6 routes, smaller component code footprint, explicit `shortcut:` debt tracking, and queryable codebase architecture in `graphify-out/`.

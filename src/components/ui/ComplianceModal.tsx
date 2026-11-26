@@ -169,12 +169,12 @@ export function ComplianceModal({ open, onClose }: ComplianceModalProps) {
       className="atlantis-dialog"
       {...({ closedby: "any" } as Record<string, string>)}
     >
-      <div className="overflow-hidden rounded-2xl border border-[#E5B63B]/35 bg-[#0C0A24] text-white shadow-2xl">
+      <div className="overflow-hidden rounded-lg border border-white/15 bg-[#0C182E] text-white shadow-2xl">
         {/* Header */}
-        <div className="flex items-start justify-between gap-4 border-b border-white/10 bg-[#14103B] px-6 py-5">
+        <div className="flex items-start justify-between gap-4 border-b border-white/10 bg-[#081120] px-6 py-5">
           <div>
-            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-[#F5D576]">
-              <ShieldCheck className="h-4 w-4 text-[#E5B63B]" />
+            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.2em] text-[#E3BC5A]">
+              <ShieldCheck className="h-4 w-4 text-[#C89B2B]" aria-hidden="true" />
               <span>B2B Vendor Accreditation Ledger</span>
             </div>
             <h2
@@ -193,54 +193,54 @@ export function ComplianceModal({ open, onClose }: ComplianceModalProps) {
             type="button"
             onClick={() => void closeAnimated()}
             aria-label="Close accreditation ledger"
-            className="rounded-lg border border-white/15 bg-white/5 p-2 text-slate-300 transition-colors hover:border-[#E5B63B]/60 hover:bg-white/10 hover:text-white"
+            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md border border-white/15 bg-white/5 p-2 text-slate-300 transition-colors hover:border-[#C89B2B] hover:bg-white/10 hover:text-white"
           >
-            <X className="h-5 w-5" />
+            <X className="h-5 w-5" aria-hidden="true" />
           </button>
         </div>
 
         {/* Body */}
-        <div className="max-h-[60vh] overflow-y-auto px-6 py-5">
-          <div className="mb-4 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-xs text-slate-300">
+        <div className="scroll-panel-stable max-h-[60dvh] px-6 py-5">
+          <div className="mb-4 flex flex-wrap items-center justify-between gap-3 rounded-md border border-white/10 bg-white/[0.03] px-4 py-3 text-xs text-slate-300">
             <div className="flex items-center gap-2">
-              <Building2 className="h-4 w-4 shrink-0 text-[#00C2F0]" />
+              <Building2 className="h-4 w-4 shrink-0 text-[#C89B2B]" aria-hidden="true" />
               <span>
-                Click any registration ID to copy directly into procurement or accreditation forms.
+                Select any registration ID to copy directly into vendor accreditation forms.
               </span>
             </div>
             <button
               type="button"
               onClick={() => void copyFullLedger()}
-              className="inline-flex items-center gap-1.5 rounded-lg border border-[#E5B63B]/50 bg-[#E5B63B]/15 px-3 py-1.5 font-semibold text-[#F5D576] transition-colors hover:bg-[#E5B63B]/25"
+              className="inline-flex min-h-9 items-center gap-1.5 rounded-md border border-[#C89B2B]/50 bg-[#C89B2B]/15 px-3 py-1.5 font-semibold text-[#E3BC5A] transition-colors hover:bg-[#C89B2B]/25"
             >
               {copiedAll ? (
                 <>
-                  <Check className="h-3.5 w-3.5" />
+                  <Check className="h-3.5 w-3.5" aria-hidden="true" />
                   <span>Full Ledger Copied</span>
                 </>
               ) : (
                 <>
-                  <Copy className="h-3.5 w-3.5" />
+                  <Copy className="h-3.5 w-3.5" aria-hidden="true" />
                   <span>Copy All Credentials</span>
                 </>
               )}
             </button>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid gap-px overflow-hidden rounded-md border border-white/10 bg-white/10 sm:grid-cols-2">
             {CREDENTIALS.map((cred) => (
               <div
                 key={cred.id}
-                className="flex flex-col justify-between rounded-xl border border-white/10 bg-white/[0.03] p-4 transition-colors hover:border-[#E5B63B]/40"
+                className="flex flex-col justify-between bg-[#0C182E] p-4"
               >
                 <div>
                   <div className="flex items-center justify-between gap-2">
-                    <span className="text-[11px] font-mono uppercase tracking-wider text-[#00C2F0]">
+                    <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400">
                       {cred.category}
                     </span>
                     {cred.isPlaceholder ? (
-                      <span className="rounded-full border border-amber-400/40 bg-amber-500/15 px-2 py-0.5 text-[10px] font-medium text-amber-200">
-                        Placeholder
+                      <span className="rounded-sm border border-amber-400/40 bg-amber-500/15 px-2 py-0.5 text-[10px] font-medium text-amber-200">
+                        Pending Filing
                       </span>
                     ) : null}
                   </div>
@@ -250,8 +250,8 @@ export function ComplianceModal({ open, onClose }: ComplianceModalProps) {
                   <p className="mt-0.5 text-xs text-slate-400">{cred.authority}</p>
                 </div>
 
-                <div className="mt-3 flex items-center justify-between gap-2 rounded-lg border border-white/10 bg-[#070816]/80 px-3 py-2">
-                  <code className="truncate font-mono text-xs font-medium text-[#F5D576]">
+                <div className="mt-3 flex items-center justify-between gap-2 rounded-sm border border-white/10 bg-[#081120] px-3 py-2">
+                  <code className="min-w-0 truncate font-mono text-xs font-medium text-[#E3BC5A]">
                     {cred.value}
                   </code>
                   {!cred.isPlaceholder ? (
@@ -259,12 +259,12 @@ export function ComplianceModal({ open, onClose }: ComplianceModalProps) {
                       type="button"
                       onClick={() => void copyValue(cred.id, cred.value)}
                       aria-label={`Copy ${cred.label}`}
-                      className="shrink-0 rounded p-1 text-slate-400 transition-colors hover:bg-white/10 hover:text-white"
+                      className="inline-flex min-h-8 min-w-8 shrink-0 items-center justify-center rounded p-1 text-slate-400 transition-colors hover:bg-white/10 hover:text-white"
                     >
                       {copiedId === cred.id ? (
-                        <Check className="h-3.5 w-3.5 text-emerald-400" />
+                        <Check className="h-3.5 w-3.5 text-emerald-400" aria-hidden="true" />
                       ) : (
-                        <Copy className="h-3.5 w-3.5" />
+                        <Copy className="h-3.5 w-3.5" aria-hidden="true" />
                       )}
                     </button>
                   ) : null}
@@ -275,12 +275,12 @@ export function ComplianceModal({ open, onClose }: ComplianceModalProps) {
         </div>
 
         {/* Footer */}
-        <div className="flex flex-wrap items-center justify-between gap-3 border-t border-white/10 bg-[#09081B] px-6 py-4 text-xs text-slate-400">
+        <div className="flex flex-wrap items-center justify-between gap-3 border-t border-white/10 bg-[#081120] px-6 py-4 text-xs text-slate-400">
           <span>
             Need certified true copies for RFP submission? Email{" "}
             <a
               href={`mailto:${COMPANY.contacts.email}`}
-              className="font-medium text-[#F5D576] underline-offset-2 hover:underline"
+              className="font-medium text-[#E3BC5A] underline-offset-2 hover:underline"
             >
               {COMPANY.contacts.email}
             </a>
@@ -288,7 +288,7 @@ export function ComplianceModal({ open, onClose }: ComplianceModalProps) {
           <button
             type="button"
             onClick={() => void closeAnimated()}
-            className="rounded-lg bg-white/10 px-4 py-2 font-semibold text-white transition-colors hover:bg-white/20"
+            className="min-h-9 rounded-md bg-white/10 px-4 py-2 font-semibold text-white transition-colors hover:bg-white/20"
           >
             Close
           </button>

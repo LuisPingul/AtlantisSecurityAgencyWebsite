@@ -73,19 +73,19 @@ export function SiteShell({ children }: { children: ReactNode }) {
       </a>
 
       {/* Persistent Top Utility Bar */}
-      <div className="border-b border-white/10 bg-[#070816] text-xs text-slate-300">
+      <div className="border-b border-white/10 bg-[#081120] text-xs text-slate-300">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-6 gap-y-2 px-4 py-2 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center gap-x-5 gap-y-1">
-            <span className="inline-flex items-center gap-2 font-medium text-white">
+            <span className="inline-flex items-center gap-2 font-medium text-slate-200">
               <span className="signal-dot" aria-hidden="true" />
               <span>24/7 Operations · Davao &amp; Kidapawan</span>
             </span>
             <button
               type="button"
               onClick={() => setComplianceOpen(true)}
-              className="hidden items-center gap-1.5 font-mono text-[11px] text-[#F5D576] transition-colors hover:text-white sm:inline-flex"
+              className="hidden items-center gap-1.5 font-mono text-[11px] text-[#E3BC5A] transition-colors hover:text-white sm:inline-flex"
             >
-              <ShieldCheck className="h-3.5 w-3.5 text-[#E5B63B]" />
+              <ShieldCheck className="h-3.5 w-3.5 text-[#C89B2B]" aria-hidden="true" />
               <span>PNP-SOSIA: PSA-WGS-M00770-2025</span>
             </button>
           </div>
@@ -93,22 +93,22 @@ export function SiteShell({ children }: { children: ReactNode }) {
           <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
             <a
               href={`tel:${COMPANY.contacts.phones[0].tel}`}
-              className="inline-flex items-center gap-1.5 font-semibold text-white transition-colors hover:text-[#F5D576]"
+              className="inline-flex items-center gap-1.5 font-mono text-[11px] font-semibold text-white transition-colors hover:text-[#E3BC5A]"
             >
-              <Phone className="h-3.5 w-3.5 text-[#E5B63B]" />
+              <Phone className="h-3.5 w-3.5 text-[#C89B2B]" aria-hidden="true" />
               <span>{COMPANY.contacts.phones[0].display}</span>
             </a>
             <a
               href={`tel:${COMPANY.contacts.phones[1].tel}`}
-              className="hidden items-center gap-1.5 font-medium text-slate-300 transition-colors hover:text-[#F5D576] md:inline-flex"
+              className="hidden items-center gap-1.5 font-mono text-[11px] text-slate-300 transition-colors hover:text-[#E3BC5A] md:inline-flex"
             >
               <span>/ {COMPANY.contacts.phones[1].display}</span>
             </a>
             <a
               href={`mailto:${COMPANY.contacts.email}`}
-              className="hidden items-center gap-1.5 text-slate-300 transition-colors hover:text-[#F5D576] lg:inline-flex"
+              className="hidden items-center gap-1.5 text-slate-300 transition-colors hover:text-[#E3BC5A] lg:inline-flex"
             >
-              <Mail className="h-3.5 w-3.5 text-[#00C2F0]" />
+              <Mail className="h-3.5 w-3.5 text-slate-400" aria-hidden="true" />
               <span>{COMPANY.contacts.email}</span>
             </a>
           </div>
@@ -117,13 +117,13 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
       {/* Sticky Command Navbar */}
       <header
-        className={`sticky top-0 z-40 transition-all duration-300 ${
+        className={`sticky top-0 z-40 transition-colors duration-200 ${
           scrolled
-            ? "border-b border-[#E5B63B]/25 bg-[#09081F]/92 shadow-lg shadow-black/30 backdrop-blur-md"
-            : "border-b border-white/10 bg-[#0D0B2B]/90 backdrop-blur-sm"
+            ? "border-b border-white/15 bg-[#081120]/95 shadow-md shadow-black/25 backdrop-blur-md"
+            : "border-b border-white/10 bg-[#0C182E]"
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3.5 sm:px-6 lg:px-8">
           <Link href="/" className="group flex items-center gap-3">
             <div className="relative h-11 w-11 shrink-0 sm:h-12 sm:w-12">
               <Image
@@ -131,15 +131,15 @@ export function SiteShell({ children }: { children: ReactNode }) {
                 alt="Atlantis Security Agency Inc. Official Seal"
                 fill
                 sizes="48px"
-                className="object-contain drop-shadow-[0_2px_10px_rgba(229,182,59,0.35)] transition-transform duration-300 group-hover:scale-105"
+                className="object-contain"
                 priority
               />
             </div>
             <div className="leading-tight">
-              <span className="block font-display text-base font-bold tracking-[0.14em] text-gold-gradient sm:text-lg">
+              <span className="block font-display text-base font-bold tracking-[0.14em] text-white sm:text-lg">
                 ATLANTIS
               </span>
-              <span className="block text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-300">
+              <span className="block text-[10px] font-semibold uppercase tracking-[0.2em] text-[#E3BC5A]">
                 Security Agency Inc.
               </span>
             </div>
@@ -159,10 +159,11 @@ export function SiteShell({ children }: { children: ReactNode }) {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`rounded-lg px-3.5 py-2 text-sm font-semibold transition-colors ${
+                  aria-current={active ? "page" : undefined}
+                  className={`rounded-md px-3.5 py-2 text-sm font-medium transition-colors ${
                     active
-                      ? "bg-[#E5B63B]/15 text-[#F5D576]"
-                      : "text-slate-200 hover:bg-white/5 hover:text-white"
+                      ? "bg-white/10 text-white underline decoration-[#C89B2B] decoration-2 underline-offset-8"
+                      : "text-slate-300 hover:bg-white/5 hover:text-white"
                   }`}
                 >
                   {item.label}
@@ -175,10 +176,10 @@ export function SiteShell({ children }: { children: ReactNode }) {
           <div className="hidden items-center gap-3 lg:flex">
             <Link
               href="/contact#proposal"
-              className="bg-gold-metallic inline-flex items-center gap-1.5 rounded-lg px-4 py-2.5 text-sm font-bold text-[#070816] shadow-md shadow-[#E5B63B]/20 transition-transform hover:-translate-y-0.5"
+              className="bg-gold-metallic inline-flex min-h-11 items-center gap-1.5 rounded-md px-4 py-2.5 text-sm font-bold text-[#081120] transition-colors"
             >
               <span>Request Site Audit</span>
-              <ArrowUpRight className="h-4 w-4" />
+              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
 
@@ -189,9 +190,9 @@ export function SiteShell({ children }: { children: ReactNode }) {
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav-drawer"
             aria-label={mobileOpen ? "Close navigation menu" : "Open navigation menu"}
-            className="inline-flex items-center justify-center rounded-lg border border-white/15 bg-white/5 p-2.5 text-white transition-colors hover:border-[#E5B63B]/50 lg:hidden"
+            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md border border-white/15 bg-white/5 p-2.5 text-white transition-colors hover:border-[#C89B2B] lg:hidden"
           >
-            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {mobileOpen ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
           </button>
         </div>
 
@@ -199,7 +200,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
         {mobileOpen ? (
           <div
             id="mobile-nav-drawer"
-            className="border-t border-white/10 bg-[#0A0822] px-4 pb-6 pt-4 lg:hidden"
+            className="border-t border-white/10 bg-[#081120] px-4 pb-6 pt-4 lg:hidden"
           >
             <nav aria-label="Mobile navigation" className="flex flex-col gap-1">
               {NAV_LINKS.map((item) => {
@@ -211,9 +212,10 @@ export function SiteShell({ children }: { children: ReactNode }) {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`rounded-lg px-4 py-3 text-sm font-semibold ${
+                    aria-current={active ? "page" : undefined}
+                    className={`rounded-md px-4 py-3 text-sm font-semibold ${
                       active
-                        ? "bg-[#E5B63B]/15 text-[#F5D576]"
+                        ? "bg-white/10 text-[#E3BC5A]"
                         : "text-slate-200 hover:bg-white/5"
                     }`}
                   >
@@ -226,10 +228,10 @@ export function SiteShell({ children }: { children: ReactNode }) {
             <div className="mt-4 flex flex-col gap-2.5 border-t border-white/10 pt-4">
               <Link
                 href="/contact#proposal"
-                className="bg-gold-metallic flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-bold text-[#070816]"
+                className="bg-gold-metallic flex min-h-11 items-center justify-center gap-2 rounded-md px-4 py-3 text-sm font-bold text-[#081120]"
               >
                 <span>Request Free Site Assessment</span>
-                <ArrowUpRight className="h-4 w-4" />
+                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
               </Link>
               <button
                 type="button"
@@ -237,9 +239,9 @@ export function SiteShell({ children }: { children: ReactNode }) {
                   setMobileOpen(false);
                   setComplianceOpen(true);
                 }}
-                className="flex items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/5 px-4 py-2.5 text-xs font-mono font-medium text-[#F5D576]"
+                className="flex min-h-11 items-center justify-center gap-2 rounded-md border border-white/15 bg-white/5 px-4 py-2.5 text-xs font-mono font-medium text-[#E3BC5A]"
               >
-                <ShieldCheck className="h-4 w-4" />
+                <ShieldCheck className="h-4 w-4" aria-hidden="true" />
                 <span>Verify Licenses &amp; Accreditation</span>
               </button>
             </div>
@@ -249,8 +251,8 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
       <main id="main-content">{children}</main>
 
-      {/* Authoritative Dark-Indigo Footer */}
-      <footer className="bg-[#070816] text-slate-300">
+      {/* Authoritative Maritime-Navy Footer */}
+      <footer className="bg-[#081120] text-slate-300">
         <GreekKeyDivider />
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-12">
@@ -268,16 +270,16 @@ export function SiteShell({ children }: { children: ReactNode }) {
                   />
                 </div>
                 <div>
-                  <p className="font-display text-lg font-bold tracking-[0.14em] text-gold-gradient">
+                  <p className="font-display text-lg font-bold tracking-[0.14em] text-white">
                     ATLANTIS
                   </p>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-300">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#E3BC5A]">
                     Security Agency Inc.
                   </p>
                 </div>
               </div>
 
-              <p className="mt-4 font-display text-sm italic text-[#F5D576]">
+              <p className="mt-4 font-display text-sm italic text-slate-200">
                 &ldquo;{COMPANY.tagline}&rdquo;
               </p>
               <p className="mt-3 text-sm leading-relaxed text-slate-400">
@@ -288,9 +290,9 @@ export function SiteShell({ children }: { children: ReactNode }) {
                 <button
                   type="button"
                   onClick={() => setComplianceOpen(true)}
-                  className="inline-flex items-center gap-1.5 rounded-lg border border-[#E5B63B]/35 bg-[#E5B63B]/10 px-3 py-1.5 font-mono text-[11px] font-medium text-[#F5D576] transition-colors hover:bg-[#E5B63B]/20"
+                  className="inline-flex min-h-10 items-center gap-1.5 rounded-md border border-[#C89B2B]/40 bg-white/[0.04] px-3 py-2 font-mono text-[11px] font-medium text-[#E3BC5A] transition-colors hover:border-[#C89B2B] hover:bg-white/[0.08]"
                 >
-                  <ShieldCheck className="h-3.5 w-3.5" />
+                  <ShieldCheck className="h-3.5 w-3.5" aria-hidden="true" />
                   <span>PNP-SOSIA: PSA-WGS-M00770-2025</span>
                 </button>
               </div>
@@ -298,7 +300,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
             {/* Navigation Column */}
             <div className="lg:col-span-2">
-              <h3 className="text-xs font-mono font-semibold uppercase tracking-[0.2em] text-[#F5D576]">
+              <h3 className="text-xs font-mono font-semibold uppercase tracking-[0.2em] text-[#E3BC5A]">
                 Agency
               </h3>
               <ul className="mt-4 space-y-2.5 text-sm">
@@ -306,7 +308,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="text-slate-300 transition-colors hover:text-[#F5D576]"
+                      className="text-slate-300 transition-colors hover:text-white"
                     >
                       {item.label}
                     </Link>
@@ -317,13 +319,13 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
             {/* Offices Column */}
             <div className="lg:col-span-3">
-              <h3 className="text-xs font-mono font-semibold uppercase tracking-[0.2em] text-[#F5D576]">
+              <h3 className="text-xs font-mono font-semibold uppercase tracking-[0.2em] text-[#E3BC5A]">
                 Command Offices
               </h3>
               <div className="mt-4 space-y-4 text-sm">
                 {COMPANY.offices.map((office) => (
                   <div key={office.id} className="flex items-start gap-2.5">
-                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#E5B63B]" />
+                    <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#C89B2B]" aria-hidden="true" />
                     <div>
                       <p className="font-semibold text-white">
                         {office.type} — {office.city}
@@ -339,19 +341,19 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
             {/* Direct Dispatch Column */}
             <div className="lg:col-span-3">
-              <h3 className="text-xs font-mono font-semibold uppercase tracking-[0.2em] text-[#F5D576]">
+              <h3 className="text-xs font-mono font-semibold uppercase tracking-[0.2em] text-[#E3BC5A]">
                 Direct Inquiries
               </h3>
-              <div className="mt-4 space-y-3 text-sm">
+              <div className="mt-4 space-y-2.5 text-sm">
                 {COMPANY.contacts.phones.map((phone) => (
                   <a
                     key={phone.tel}
                     href={`tel:${phone.tel}`}
-                    className="flex items-center gap-2.5 rounded-lg border border-white/10 bg-white/[0.03] px-3.5 py-2.5 transition-colors hover:border-[#E5B63B]/40 hover:text-white"
+                    className="flex min-h-11 items-center gap-2.5 rounded-md border border-white/10 bg-white/[0.03] px-3.5 py-2.5 transition-colors hover:border-[#C89B2B]/50 hover:text-white"
                   >
-                    <Phone className="h-4 w-4 text-[#E5B63B]" />
+                    <Phone className="h-4 w-4 text-[#C89B2B]" aria-hidden="true" />
                     <div>
-                      <span className="block font-semibold text-white">
+                      <span className="block font-mono text-xs font-semibold text-white">
                         {phone.display}
                       </span>
                       <span className="block text-[11px] text-slate-400">
@@ -363,10 +365,10 @@ export function SiteShell({ children }: { children: ReactNode }) {
 
                 <a
                   href={`mailto:${COMPANY.contacts.email}`}
-                  className="flex items-center gap-2.5 rounded-lg border border-white/10 bg-white/[0.03] px-3.5 py-2.5 transition-colors hover:border-[#00C2F0]/40 hover:text-white"
+                  className="flex min-h-11 items-center gap-2.5 rounded-md border border-white/10 bg-white/[0.03] px-3.5 py-2.5 transition-colors hover:border-white/30 hover:text-white"
                 >
-                  <Mail className="h-4 w-4 text-[#00C2F0]" />
-                  <span className="truncate font-medium text-white">
+                  <Mail className="h-4 w-4 text-slate-400" aria-hidden="true" />
+                  <span className="min-w-0 break-all font-medium text-white">
                     {COMPANY.contacts.email}
                   </span>
                 </a>
@@ -381,7 +383,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
                 100% Filipino-Owned · Est. {COMPANY.establishedYear}
               </span>
             </p>
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-[#E5B63B]/80">
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-slate-400">
               People · Safety · Integrity · Trust
             </p>
           </div>

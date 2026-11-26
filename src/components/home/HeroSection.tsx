@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
 import {
   ArrowRight,
   Award,
@@ -14,23 +13,14 @@ import { COMPANY } from "@/data/company";
 import { useComplianceModal } from "@/components/layout/SiteShell";
 
 export function HeroSection() {
-  const shouldReduceMotion = useReducedMotion();
   const { openComplianceModal } = useComplianceModal();
-
-  const fadeUp = shouldReduceMotion
-    ? {}
-    : {
-        initial: { opacity: 0, y: 18 },
-        animate: { opacity: 1, y: 0 },
-        transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] as const },
-      };
 
   return (
     <section className="relative overflow-hidden bg-imperial-mesh text-white">
       {/* Subtle Architectural Backdrop */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-20"
+        className="pointer-events-none absolute inset-0 opacity-15"
       >
         <Image
           src="/images/hero/night-architecture.jpg"
@@ -39,130 +29,98 @@ export function HeroSection() {
           sizes="100vw"
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#070816] via-[#0A0822]/90 to-[#0B0928]/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#081120] via-[#081120]/92 to-[#0C182E]/80" />
       </div>
 
-      {/* Subtle Tactical Grid Overlay */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-tactical-grid opacity-35"
-      />
-
-      <div className="relative mx-auto max-w-7xl px-4 pb-20 pt-12 sm:px-6 lg:px-8 lg:pb-24 lg:pt-16">
-        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
+      <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-12 sm:px-6 lg:px-8 lg:pb-24 lg:pt-16">
+        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-12">
           {/* Left Narrative Column */}
-          <motion.div {...fadeUp} className="lg:col-span-7">
-            <div className="inline-flex flex-wrap items-center gap-2.5 rounded-full border border-[#E5B63B]/35 bg-[#15113E]/85 px-4 py-1.5 backdrop-blur-sm">
-              <span className="signal-dot" aria-hidden="true" />
-              <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-[#F5D576]">
-                PNP-SOSIA Licensed · PADPAO Region XII · Est. {COMPANY.establishedYear}
-              </span>
-            </div>
+          <div className="lg:col-span-7">
+            <p className="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-[#E3BC5A]">
+              PNP-SOSIA Licensed · PADPAO Region XII · Est. {COMPANY.establishedYear}
+            </p>
 
-            <div className="mt-6 flex items-center gap-4">
-              <div className="relative h-16 w-16 shrink-0 sm:h-20 sm:w-20">
-                <Image
-                  src="/images/brand/atlantis-emblem.png"
-                  alt="Atlantis Security Agency Inc. Official Crest"
-                  fill
-                  sizes="80px"
-                  className="object-contain drop-shadow-[0_0_24px_rgba(229,182,59,0.4)]"
-                  priority
-                />
-              </div>
-              <div>
-                <p className="font-display text-lg font-bold tracking-[0.18em] text-gold-gradient sm:text-xl">
-                  ATLANTIS SECURITY AGENCY INC.
-                </p>
-                <p className="mt-0.5 font-display text-sm italic text-slate-300">
-                  {COMPANY.tagline}
-                </p>
-              </div>
-            </div>
-
-            <h1 className="mt-7 text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-[3.65rem]">
-              YOUR{" "}
-              <span className="text-gold-gradient">SAFETY</span>,
-              <br />
-              OUR{" "}
-              <span className="text-gold-gradient">PRIORITY.</span>
+            <h1 className="mt-4 max-w-[16ch] text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.5rem]">
+              Your safety, our priority.
             </h1>
 
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg">
+            <p className="mt-3 font-display text-base italic tracking-wide text-[#E3BC5A] sm:text-lg">
+              &ldquo;{COMPANY.tagline}&rdquo;
+            </p>
+
+            <p className="mt-4 max-w-[58ch] text-base leading-relaxed text-slate-300 sm:text-lg">
               {COMPANY.heroSubheadline}
             </p>
 
-            {/* Primary & Secondary CTAs */}
-            <div className="mt-8 flex flex-wrap items-center gap-3.5">
+            {/* Primary & Secondary CTAs (Single primary action, clear subordinate secondary) */}
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               <Link
                 href="/contact#proposal"
-                className="bg-gold-metallic inline-flex items-center gap-2 rounded-xl px-6 py-3.5 text-sm font-extrabold text-[#070816] shadow-lg shadow-[#E5B63B]/25 transition-transform hover:-translate-y-0.5 sm:text-base"
+                className="bg-gold-metallic inline-flex min-h-12 items-center gap-2 rounded-md px-6 py-3 text-sm font-bold text-[#081120] transition-colors sm:text-base"
               >
                 <span>Request Free Site Assessment</span>
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
 
               <a
                 href="#services"
-                className="inline-flex items-center gap-2 rounded-xl border border-[#00C2F0]/45 bg-[#00C2F0]/10 px-5 py-3.5 text-sm font-bold text-white transition-colors hover:border-[#00C2F0] hover:bg-[#00C2F0]/20 sm:text-base"
+                className="inline-flex min-h-12 items-center gap-2 rounded-md border border-white/20 bg-white/[0.04] px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-white/40 hover:bg-white/[0.08] sm:text-base"
               >
-                <ShieldCheck className="h-4 w-4 text-[#00C2F0]" />
                 <span>Explore 10 Security Services</span>
               </a>
+            </div>
 
+            {/* Direct Dispatch Line */}
+            <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-slate-300">
               <a
                 href={`tel:${COMPANY.contacts.phones[0].tel}`}
-                className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-3.5 text-sm font-semibold text-slate-200 transition-colors hover:border-[#E5B63B]/50 hover:text-white"
+                className="inline-flex items-center gap-1.5 font-mono font-semibold text-white transition-colors hover:text-[#E3BC5A]"
               >
-                <PhoneCall className="h-4 w-4 text-[#E5B63B]" />
-                <span>{COMPANY.contacts.phones[0].display}</span>
+                <PhoneCall className="h-3.5 w-3.5 text-[#C89B2B]" aria-hidden="true" />
+                <span>Direct Command Desk: {COMPANY.contacts.phones[0].display}</span>
               </a>
+              <span className="hidden text-white/25 sm:inline" aria-hidden="true">
+                |
+              </span>
+              <span className="text-slate-400">
+                100% Filipino-Owned Domestic Corporation
+              </span>
             </div>
 
-            {/* Executive Trust Metrics */}
-            <div className="mt-9 grid grid-cols-2 gap-3 border-t border-white/10 pt-6 sm:grid-cols-4">
+            {/* Executive Trust Metrics — Tabular Hairline Strip */}
+            <dl className="mt-10 grid grid-cols-2 gap-6 border-t border-white/12 pt-6 sm:grid-cols-4">
               <div>
-                <p className="font-mono text-lg font-bold text-[#F5D576]">100%</p>
-                <p className="text-xs text-slate-400">Filipino-Owned Corp.</p>
+                <dt className="text-xs text-slate-400">Ownership</dt>
+                <dd className="mt-1 font-mono text-lg font-bold tabular-nums text-white">
+                  100% PH
+                </dd>
               </div>
               <div>
-                <p className="font-mono text-lg font-bold text-[#F5D576]">10</p>
-                <p className="text-xs text-slate-400">Integrated Service Lines</p>
+                <dt className="text-xs text-slate-400">Service Lines</dt>
+                <dd className="mt-1 font-mono text-lg font-bold tabular-nums text-white">
+                  10 Divisions
+                </dd>
               </div>
               <div>
-                <p className="font-mono text-lg font-bold text-[#00C2F0]">24/7</p>
-                <p className="text-xs text-slate-400">Inspected Post Coverage</p>
+                <dt className="text-xs text-slate-400">Post Supervision</dt>
+                <dd className="mt-1 font-mono text-lg font-bold tabular-nums text-white">
+                  24/7 Inspected
+                </dd>
               </div>
               <div>
-                <p className="font-mono text-lg font-bold text-white">PH-Wide</p>
-                <p className="text-xs text-slate-400">Davao · Kidapawan · Nationwide</p>
+                <dt className="text-xs text-slate-400">Coverage</dt>
+                <dd className="mt-1 font-mono text-lg font-bold text-[#E3BC5A]">
+                  Nationwide
+                </dd>
               </div>
-            </div>
-          </motion.div>
+            </dl>
+          </div>
 
           {/* Right Framed Officers Showcase (LCP Candidate Image) */}
-          <motion.div
-            initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.97 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
-            className="relative lg:col-span-5"
-          >
-            <div className="relative overflow-hidden rounded-2xl border border-[#E5B63B]/40 bg-[#120F33] shadow-2xl shadow-black/60">
-              {/* Top Command Strip */}
-              <div className="flex items-center justify-between border-b border-white/10 bg-[#0B0922]/90 px-4 py-2.5">
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="h-4 w-4 text-[#E5B63B]" />
-                  <span className="font-mono text-[11px] font-semibold uppercase tracking-wider text-slate-200">
-                    Active Licensed Roster
-                  </span>
-                </div>
-                <span className="rounded-full border border-emerald-400/35 bg-emerald-500/15 px-2.5 py-0.5 font-mono text-[10px] font-semibold text-emerald-300">
-                  VETTED &amp; DEPLOYED
-                </span>
-              </div>
-
+          <div className="relative lg:col-span-5">
+            <figure className="overflow-hidden rounded-lg border border-white/15 bg-[#0C182E] shadow-2xl shadow-black/40">
               {/* Authentic Uniformed Atlantis Officers Photo — LCP Priority */}
-              <div className="relative aspect-[4/3.6] w-full overflow-hidden">
+              <div className="relative aspect-[4/3.5] w-full overflow-hidden bg-[#081120]">
                 <Image
                   src="/images/hero/officers-team.jpg"
                   alt="Four uniformed Atlantis Security Agency Inc. licensed security officers standing at multi-lane walk-through metal detector checkpoints"
@@ -172,39 +130,39 @@ export function HeroSection() {
                   fetchPriority="high"
                   className="object-cover object-top"
                 />
-                <div
-                  aria-hidden="true"
-                  className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#09081F] via-[#09081F]/60 to-transparent"
-                />
               </div>
 
-              {/* Bottom Promise Footer inside Frame */}
-              <div className="relative -mt-10 px-5 pb-5">
-                <div className="rounded-xl border border-white/15 bg-[#0C0A26]/92 p-4 backdrop-blur-md">
-                  <p className="text-xs font-mono uppercase tracking-[0.18em] text-[#00C2F0]">
-                    Our Promise to Clients
-                  </p>
-                  <p className="mt-1 text-sm font-semibold leading-snug text-white">
-                    &ldquo;{COMPANY.corePromise}&rdquo;
-                  </p>
-                  <div className="mt-3 flex flex-wrap items-center justify-between gap-2 border-t border-white/10 pt-2.5 text-[11px] text-slate-300">
-                    <span className="inline-flex items-center gap-1">
-                      <CheckCircle2 className="h-3.5 w-3.5 text-[#E5B63B]" />
-                      <span>PADPAO Fair Rates</span>
-                    </span>
-                    <button
-                      type="button"
-                      onClick={openComplianceModal}
-                      className="inline-flex items-center gap-1 font-semibold text-[#F5D576] underline-offset-2 hover:underline"
-                    >
-                      <Award className="h-3.5 w-3.5" />
-                      <span>Verify Licenses</span>
-                    </button>
-                  </div>
+              {/* Documentary Caption & Core Promise */}
+              <figcaption className="border-t border-white/10 bg-[#0C182E] p-5">
+                <div className="flex items-center justify-between gap-2 text-[11px] font-mono uppercase tracking-wider text-slate-400">
+                  <span className="inline-flex items-center gap-1.5 text-[#E3BC5A]">
+                    <ShieldCheck className="h-3.5 w-3.5 text-[#C89B2B]" aria-hidden="true" />
+                    <span>Licensed Field Detachment</span>
+                  </span>
+                  <span>Multi-Lane Checkpoint</span>
                 </div>
-              </div>
-            </div>
-          </motion.div>
+
+                <blockquote className="mt-2.5 text-sm font-medium leading-relaxed text-white">
+                  &ldquo;{COMPANY.corePromise}&rdquo;
+                </blockquote>
+
+                <div className="mt-3.5 flex flex-wrap items-center justify-between gap-2 border-t border-white/10 pt-3 text-xs text-slate-300">
+                  <span className="inline-flex items-center gap-1.5">
+                    <CheckCircle2 className="h-3.5 w-3.5 text-[#C89B2B]" aria-hidden="true" />
+                    <span>PADPAO-Compliant Rates</span>
+                  </span>
+                  <button
+                    type="button"
+                    onClick={openComplianceModal}
+                    className="inline-flex items-center gap-1 font-semibold text-[#E3BC5A] underline-offset-4 hover:underline"
+                  >
+                    <Award className="h-3.5 w-3.5" aria-hidden="true" />
+                    <span>Verify Licenses</span>
+                  </button>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
         </div>
       </div>
     </section>

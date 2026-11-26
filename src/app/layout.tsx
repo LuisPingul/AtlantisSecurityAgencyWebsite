@@ -101,7 +101,7 @@ export default function RootLayout({
       lang="en"
       className={`${cinzel.variable} ${jakarta.variable} ${jetbrains.variable}`}
     >
-      <body className="min-h-screen bg-[#070816] text-[#11102B] antialiased">
+      <body className="min-h-dvh bg-[#081120] text-[#0B1324] antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

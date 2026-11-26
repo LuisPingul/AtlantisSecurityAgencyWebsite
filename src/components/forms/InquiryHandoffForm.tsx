@@ -144,6 +144,7 @@ export function InquiryHandoffForm({
     setSubmittedSummary(summary);
   };
 
+  // shortcut: client-side mailto/SMS/Messenger handoff without backend storage, upgrade when server action + Resend/CRM API is added
   const copySummary = async (text: string) => {
     try {
       await navigator.clipboard.writeText(text);
@@ -157,7 +158,7 @@ export function InquiryHandoffForm({
   return (
     <div
       id="proposal"
-      className="rounded-2xl border border-[#1B1654]/15 bg-white p-6 shadow-md sm:p-8"
+      className="rounded-lg border border-slate-200 bg-white p-6 sm:p-8"
     >
       <div
         ref={announcerRef}
@@ -169,7 +170,7 @@ export function InquiryHandoffForm({
       <div
         role="tablist"
         aria-label="Select inquiry type"
-        className="flex flex-wrap gap-2 border-b border-[#1B1654]/10 pb-5"
+        className="tag-row-balanced gap-2 border-b border-slate-200 pb-5"
       >
         {(
           [
@@ -186,10 +187,10 @@ export function InquiryHandoffForm({
               role="tab"
               aria-selected={active}
               onClick={() => setTab(item)}
-              className={`rounded-xl px-4 py-2.5 text-xs font-bold transition-all sm:text-sm ${
+              className={`min-h-10 rounded-md border px-4 py-2 text-xs font-semibold transition-colors sm:text-sm ${
                 active
-                  ? "bg-[#16123D] text-[#F5D576] shadow-sm"
-                  : "bg-[#F6F5F0] text-[#11102B] hover:bg-[#1B1654]/10"
+                  ? "border-[#0C182E] bg-[#0C182E] text-white"
+                  : "border-slate-300 bg-[#F5F3EE] text-[#0B1324] hover:border-[#0C182E]"
               }`}
             >
               {item}
@@ -208,13 +209,13 @@ export function InquiryHandoffForm({
           <div>
             <label
               htmlFor="inq-org"
-              className="block text-xs font-bold uppercase tracking-wider text-[#11102B]"
+              className="block text-xs font-bold uppercase tracking-wider text-[#0B1324]"
             >
               Company / Institution Name *
             </label>
             <span
               id="inq-org-hint"
-              className="mt-0.5 block text-xs text-[#4A4968]"
+              className="mt-0.5 block text-xs text-[#475569]"
             >
               Business, school, plant, subdivision, or event name
             </span>
@@ -230,7 +231,7 @@ export function InquiryHandoffForm({
               aria-describedby="inq-org-hint"
               data-error="inq-org-error"
               placeholder="e.g., Green Gold Processing Plant"
-              className="atlantis-input mt-1.5 w-full rounded-xl border border-[#1B1654]/20 bg-[#F6F5F0]/60 px-3.5 py-2.5 text-sm text-[#11102B]"
+              className="atlantis-input mt-1.5 min-h-11 w-full rounded-md border border-slate-300 bg-[#F5F3EE]/60 px-3.5 py-2.5 text-base text-[#0B1324] sm:text-sm"
             />
             <div id="inq-org-error" className="atlantis-field-error">
               <AlertCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
@@ -242,13 +243,13 @@ export function InquiryHandoffForm({
           <div>
             <label
               htmlFor="inq-person"
-              className="block text-xs font-bold uppercase tracking-wider text-[#11102B]"
+              className="block text-xs font-bold uppercase tracking-wider text-[#0B1324]"
             >
               Contact Person &amp; Role *
             </label>
             <span
               id="inq-person-hint"
-              className="mt-0.5 block text-xs text-[#4A4968]"
+              className="mt-0.5 block text-xs text-[#475569]"
             >
               Full name of authorized representative
             </span>
@@ -264,7 +265,7 @@ export function InquiryHandoffForm({
               aria-describedby="inq-person-hint"
               data-error="inq-person-error"
               placeholder="e.g., Juan Dela Cruz — Operations Manager"
-              className="atlantis-input mt-1.5 w-full rounded-xl border border-[#1B1654]/20 bg-[#F6F5F0]/60 px-3.5 py-2.5 text-sm text-[#11102B]"
+              className="atlantis-input mt-1.5 min-h-11 w-full rounded-md border border-slate-300 bg-[#F5F3EE]/60 px-3.5 py-2.5 text-base text-[#0B1324] sm:text-sm"
             />
             <div id="inq-person-error" className="atlantis-field-error">
               <AlertCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
@@ -278,13 +279,13 @@ export function InquiryHandoffForm({
           <div>
             <label
               htmlFor="inq-email"
-              className="block text-xs font-bold uppercase tracking-wider text-[#11102B]"
+              className="block text-xs font-bold uppercase tracking-wider text-[#0B1324]"
             >
               Official Email Address *
             </label>
             <span
               id="inq-email-hint"
-              className="mt-0.5 block text-xs text-[#4A4968]"
+              className="mt-0.5 block text-xs text-[#475569]"
             >
               Format: name@company.com
             </span>
@@ -299,7 +300,7 @@ export function InquiryHandoffForm({
               aria-describedby="inq-email-hint"
               data-error="inq-email-error"
               placeholder="you@company.com"
-              className="atlantis-input mt-1.5 w-full rounded-xl border border-[#1B1654]/20 bg-[#F6F5F0]/60 px-3.5 py-2.5 text-sm text-[#11102B]"
+              className="atlantis-input mt-1.5 min-h-11 w-full rounded-md border border-slate-300 bg-[#F5F3EE]/60 px-3.5 py-2.5 text-base text-[#0B1324] sm:text-sm"
             />
             <div id="inq-email-error" className="atlantis-field-error">
               <AlertCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
@@ -311,13 +312,13 @@ export function InquiryHandoffForm({
           <div>
             <label
               htmlFor="inq-phone"
-              className="block text-xs font-bold uppercase tracking-wider text-[#11102B]"
+              className="block text-xs font-bold uppercase tracking-wider text-[#0B1324]"
             >
               Mobile or Landline Number *
             </label>
             <span
               id="inq-phone-hint"
-              className="mt-0.5 block text-xs text-[#4A4968]"
+              className="mt-0.5 block text-xs text-[#475569]"
             >
               Format: 09XX XXX XXXX or +63 9XX XXX XXXX
             </span>
@@ -333,7 +334,7 @@ export function InquiryHandoffForm({
               aria-describedby="inq-phone-hint"
               data-error="inq-phone-error"
               placeholder="0916 605 5174"
-              className="atlantis-input mt-1.5 w-full rounded-xl border border-[#1B1654]/20 bg-[#F6F5F0]/60 px-3.5 py-2.5 text-sm text-[#11102B]"
+              className="atlantis-input mt-1.5 min-h-11 w-full rounded-md border border-slate-300 bg-[#F5F3EE]/60 px-3.5 py-2.5 text-base text-[#0B1324] sm:text-sm"
             />
             <div id="inq-phone-error" className="atlantis-field-error">
               <AlertCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
@@ -347,7 +348,7 @@ export function InquiryHandoffForm({
           <div>
             <label
               htmlFor="inq-service"
-              className="block text-xs font-bold uppercase tracking-wider text-[#11102B]"
+              className="block text-xs font-bold uppercase tracking-wider text-[#0B1324]"
             >
               Primary Service
             </label>
@@ -355,7 +356,7 @@ export function InquiryHandoffForm({
               id="inq-service"
               value={service}
               onChange={(e) => setService(e.target.value)}
-              className="mt-1.5 w-full rounded-xl border border-[#1B1654]/20 bg-[#F6F5F0]/60 px-3.5 py-2.5 text-sm font-medium text-[#11102B]"
+              className="mt-1.5 min-h-11 w-full rounded-md border border-slate-300 bg-[#F5F3EE]/60 px-3.5 py-2.5 text-base font-medium text-[#0B1324] sm:text-sm"
             >
               {SECURITY_SERVICES.map((s) => (
                 <option key={s.id} value={s.shortTitle}>
@@ -369,7 +370,7 @@ export function InquiryHandoffForm({
           <div>
             <label
               htmlFor="inq-location"
-              className="block text-xs font-bold uppercase tracking-wider text-[#11102B]"
+              className="block text-xs font-bold uppercase tracking-wider text-[#0B1324]"
             >
               Deployment City / Region *
             </label>
@@ -382,7 +383,7 @@ export function InquiryHandoffForm({
               onChange={(e) => setLocation(e.target.value)}
               data-error="inq-location-error"
               placeholder="Davao City / Kidapawan City"
-              className="atlantis-input mt-1.5 w-full rounded-xl border border-[#1B1654]/20 bg-[#F6F5F0]/60 px-3.5 py-2.5 text-sm text-[#11102B]"
+              className="atlantis-input mt-1.5 min-h-11 w-full rounded-md border border-slate-300 bg-[#F5F3EE]/60 px-3.5 py-2.5 text-base text-[#0B1324] sm:text-sm"
             />
             <div id="inq-location-error" className="atlantis-field-error">
               <AlertCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
@@ -394,7 +395,7 @@ export function InquiryHandoffForm({
           <div>
             <label
               htmlFor="inq-guards"
-              className="block text-xs font-bold uppercase tracking-wider text-[#11102B]"
+              className="block text-xs font-bold uppercase tracking-wider text-[#0B1324]"
             >
               Estimated Manpower
             </label>
@@ -402,7 +403,7 @@ export function InquiryHandoffForm({
               id="inq-guards"
               value={guardCount}
               onChange={(e) => setGuardCount(e.target.value)}
-              className="mt-1.5 w-full rounded-xl border border-[#1B1654]/20 bg-[#F6F5F0]/60 px-3.5 py-2.5 text-sm font-medium text-[#11102B]"
+              className="mt-1.5 min-h-11 w-full rounded-md border border-slate-300 bg-[#F5F3EE]/60 px-3.5 py-2.5 text-base font-medium text-[#0B1324] sm:text-sm"
             >
               <option value="1–3 Guards">1–3 Guards</option>
               <option value="4–8 Guards">4–8 Guards</option>
@@ -417,7 +418,7 @@ export function InquiryHandoffForm({
         <div>
           <label
             htmlFor="inq-notes"
-            className="block text-xs font-bold uppercase tracking-wider text-[#11102B]"
+            className="block text-xs font-bold uppercase tracking-wider text-[#0B1324]"
           >
             Site Requirements, Shift Schedule, or Special Instructions
           </label>
@@ -427,15 +428,15 @@ export function InquiryHandoffForm({
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
             placeholder="Share target start date, 12h/24h coverage, free CCTV setup inquiry, or specific perimeter concerns..."
-            className="mt-1.5 w-full rounded-xl border border-[#1B1654]/20 bg-[#F6F5F0]/60 px-3.5 py-2.5 text-sm text-[#11102B]"
+            className="mt-1.5 w-full rounded-md border border-slate-300 bg-[#F5F3EE]/60 px-3.5 py-2.5 text-base text-[#0B1324] sm:text-sm"
           />
         </div>
 
         <button
           type="submit"
-          className="bg-gold-metallic inline-flex w-full items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-sm font-extrabold text-[#070816] shadow-md transition-transform hover:-translate-y-0.5 sm:w-auto"
+          className="bg-gold-metallic inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md px-6 py-3 text-sm font-bold text-[#081120] transition-colors sm:w-auto"
         >
-          <Send className="h-4 w-4" />
+          <Send className="h-4 w-4" aria-hidden="true" />
           <span>Prepare Official Dispatch Packet</span>
         </button>
       </form>
@@ -445,11 +446,11 @@ export function InquiryHandoffForm({
         <div
           role="region"
           aria-label="Prepared inquiry dispatch options"
-          className="mt-6 rounded-2xl border border-[#E5B63B] bg-[#120F34] p-5 text-white"
+          className="mt-6 rounded-lg border border-[#0C182E] bg-[#0C182E] p-5 text-white"
         >
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div>
-              <p className="font-mono text-xs font-semibold uppercase tracking-wider text-[#00C2F0]">
+              <p className="font-mono text-xs font-semibold uppercase tracking-wider text-[#E3BC5A]">
                 Inquiry Validated &amp; Ready to Send
               </p>
               <p className="text-sm font-bold text-white">
@@ -459,23 +460,23 @@ export function InquiryHandoffForm({
             <button
               type="button"
               onClick={() => void copySummary(submittedSummary)}
-              className="inline-flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/10 px-3 py-1.5 text-xs font-semibold text-[#F5D576]"
+              className="inline-flex min-h-9 items-center gap-1.5 rounded-md border border-white/15 bg-white/10 px-3 py-1.5 text-xs font-semibold text-[#E3BC5A]"
             >
               {copied ? (
                 <>
-                  <Check className="h-3.5 w-3.5 text-emerald-400" />
+                  <Check className="h-3.5 w-3.5 text-emerald-400" aria-hidden="true" />
                   <span>Summary Copied</span>
                 </>
               ) : (
                 <>
-                  <Copy className="h-3.5 w-3.5" />
+                  <Copy className="h-3.5 w-3.5" aria-hidden="true" />
                   <span>Copy Summary</span>
                 </>
               )}
             </button>
           </div>
 
-          <pre className="mt-3 whitespace-pre-wrap rounded-xl border border-white/10 bg-[#070816]/90 p-3.5 font-mono text-xs leading-relaxed text-slate-300">
+          <pre className="mt-3 whitespace-pre-wrap rounded-md border border-white/10 bg-[#081120] p-3.5 font-mono text-xs leading-relaxed text-slate-300">
             {submittedSummary}
           </pre>
 
@@ -484,19 +485,19 @@ export function InquiryHandoffForm({
               href={`mailto:${COMPANY.contacts.email}?subject=${encodeURIComponent(
                 `${tab} — ${organization}`
               )}&body=${encodeURIComponent(submittedSummary)}`}
-              className="bg-gold-metallic inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-xs font-extrabold text-[#070816]"
+              className="bg-gold-metallic inline-flex min-h-11 items-center justify-center gap-2 rounded-md px-4 py-3 text-xs font-bold text-[#081120]"
             >
-              <Mail className="h-4 w-4" />
-              <span>1. Send via Email ({COMPANY.contacts.email})</span>
+              <Mail className="h-4 w-4" aria-hidden="true" />
+              <span>1. Send via Email</span>
             </a>
 
             <a
               href={`sms:${COMPANY.contacts.phones[0].tel}?&body=${encodeURIComponent(
                 submittedSummary
               )}`}
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-[#00C2F0]/45 bg-[#00C2F0]/15 px-4 py-3 text-xs font-bold text-white hover:bg-[#00C2F0]/25"
+              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-white/20 bg-white/[0.06] px-4 py-3 text-xs font-semibold text-white hover:bg-white/[0.1]"
             >
-              <MessageSquare className="h-4 w-4 text-[#00C2F0]" />
+              <MessageSquare className="h-4 w-4 text-[#E3BC5A]" aria-hidden="true" />
               <span>2. Send via SMS ({COMPANY.contacts.phones[0].display})</span>
             </a>
 
@@ -505,9 +506,9 @@ export function InquiryHandoffForm({
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => void copySummary(submittedSummary)}
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-xs font-bold text-white hover:border-[#E5B63B]"
+              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-md border border-white/15 bg-transparent px-4 py-3 text-xs font-semibold text-white hover:border-[#C89B2B]"
             >
-              <ExternalLink className="h-4 w-4 text-[#F5D576]" />
+              <ExternalLink className="h-4 w-4 text-[#E3BC5A]" aria-hidden="true" />
               <span>3. Copy &amp; Open Facebook Page</span>
             </a>
           </div>

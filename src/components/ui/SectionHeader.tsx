@@ -16,39 +16,31 @@ export function SectionHeader({
   tone = "light",
 }: SectionHeaderProps) {
   const isDark = tone === "dark";
-  const alignClasses = align === "center" ? "text-center mx-auto max-w-3xl" : "max-w-3xl";
+  const alignClasses =
+    align === "center" ? "text-center mx-auto max-w-3xl" : "max-w-3xl";
 
   return (
     <div className={alignClasses}>
-      <div
-        className={`inline-flex items-center gap-2.5 text-xs font-mono font-semibold uppercase tracking-[0.22em] ${
-          isDark ? "text-[#F5D576]" : "text-[#1B1654]"
+      <p
+        className={`font-mono text-[11px] font-semibold uppercase tracking-[0.2em] ${
+          isDark ? "text-[#E3BC5A]" : "text-[#8A6510]"
         }`}
       >
-        <span
-          className={`h-[1.5px] w-7 ${
-            isDark ? "bg-[#E5B63B]" : "bg-[#C6921E]"
-          }`}
-        />
-        <span>{eyebrow}</span>
-      </div>
+        {eyebrow}
+      </p>
       <h2
-        className={`mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-[2.65rem] lg:leading-[1.12] ${
-          isDark ? "text-white" : "text-[#11102B]"
+        className={`mt-2.5 text-2xl font-bold tracking-tight sm:text-3xl lg:text-[2.35rem] lg:leading-[1.15] ${
+          isDark ? "text-white" : "text-[#0B1324]"
         }`}
       >
-        {title}{" "}
-        {highlight ? (
-          <span className={isDark ? "text-gold-gradient" : "text-[#1B1654] underline decoration-[#E5B63B] decoration-[3px] underline-offset-4"}>
-            {highlight}
-          </span>
-        ) : null}
+        {title}
+        {highlight ? ` ${highlight}` : null}
       </h2>
       {description ? (
         <p
-          className={`mt-4 text-base leading-relaxed sm:text-lg ${
-            isDark ? "text-slate-300" : "text-[#4A4968]"
-          }`}
+          className={`mt-3.5 max-w-[62ch] text-base leading-relaxed ${
+            align === "center" ? "mx-auto" : ""
+          } ${isDark ? "text-slate-300" : "text-[#475569]"}`}
         >
           {description}
         </p>

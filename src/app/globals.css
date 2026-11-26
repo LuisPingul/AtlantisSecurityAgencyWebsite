@@ -1,17 +1,16 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-obsidian: #070816;
-  --color-indigo-deep: #0F0D2E;
-  --color-indigo-royal: #1B1654;
-  --color-indigo-bright: #28207A;
-  --color-gold: #E5B63B;
-  --color-gold-light: #F5D576;
-  --color-gold-dark: #B8861A;
-  --color-cyan-signal: #00C2F0;
-  --color-alabaster: #F6F5F0;
-  --color-ink: #11102B;
-  --color-ink-muted: #4A4968;
+  --color-obsidian: #081120;
+  --color-navy-deep: #0C182E;
+  --color-navy-royal: #122342;
+  --color-navy-slate: #1D355E;
+  --color-gold: #C89B2B;
+  --color-gold-light: #E3BC5A;
+  --color-gold-dark: #8A6510;
+  --color-alabaster: #F5F3EE;
+  --color-ink: #0B1324;
+  --color-ink-muted: #475569;
 
   --font-sans: var(--font-jakarta), system-ui, -apple-system, sans-serif;
   --font-display: var(--font-cinzel), Georgia, serif;
@@ -19,17 +18,24 @@
 }
 
 :root {
-  --bg-obsidian: #070816;
-  --bg-indigo: #13103A;
-  --bg-royal: #1D1862;
-  --accent-gold: #E5B63B;
-  --accent-gold-light: #F6D87B;
-  --accent-gold-dark: #B78419;
-  --accent-cyan: #00C2F0;
-  --surface-alabaster: #F6F5F0;
+  color-scheme: light;
+  --in-oklab: ;
+  --bg-obsidian: #081120;
+  --bg-indigo: #0C182E;
+  --bg-royal: #122342;
+  --accent-gold: #C89B2B;
+  --accent-gold-light: #E3BC5A;
+  --accent-gold-dark: #8A6510;
+  --surface-alabaster: #F5F3EE;
   --surface-white: #FFFFFF;
-  --ink-primary: #11102B;
-  --ink-muted: #4A4968;
+  --ink-primary: #0B1324;
+  --ink-muted: #475569;
+}
+
+@supports (background: linear-gradient(in oklab, white, black)) {
+  :root {
+    --in-oklab: in oklab;
+  }
 }
 
 html {
@@ -46,75 +52,108 @@ body {
   background-color: var(--bg-obsidian);
   color: var(--ink-primary);
   font-family: var(--font-sans);
+  line-height: 1.55;
   overflow-x: clip;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Signature Metallic Gold Gradient Text & Accents */
+/* Interactive pointer affordance across native controls */
+button:not(:disabled),
+[role="button"]:not([aria-disabled="true"]),
+summary,
+select:not(:disabled) {
+  cursor: pointer;
+}
+
+/* Balanced headlines and orphan-free body copy (targeted, never on *) */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+p,
+blockquote,
+li {
+  text-wrap: pretty;
+}
+
+/* Restrained Brushed-Brass Wordmark & CTA Surface */
 .text-gold-gradient {
-  background: linear-gradient(135deg, #F8E195 0%, #E5B63B 48%, #C6921E 100%);
+  background: linear-gradient(135deg var(--in-oklab), #F1D27A 0%, #C89B2B 55%, #A67B16 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
+@media (forced-colors: active) {
+  .text-gold-gradient {
+    background: none;
+    color: CanvasText;
+  }
+}
+
 .bg-gold-metallic {
-  background: linear-gradient(135deg, #F6D87B 0%, #E5B63B 55%, #C6921E 100%);
+  background: linear-gradient(180deg var(--in-oklab), #DFB448 0%, #C89B2B 100%);
 }
 
 .bg-gold-metallic:hover {
-  background: linear-gradient(135deg, #FAE59E 0%, #ECC24D 55%, #D39E27 100%);
+  background: linear-gradient(180deg var(--in-oklab), #E7C05C 0%, #D3A634 100%);
 }
 
-/* Signature Atlantis Emblem Radial Surface */
+/* Dress-Uniform Maritime Navy Surface (replaces AI purple/cyan radial blobs) */
 .bg-imperial-mesh {
-  background-color: #070816;
-  background-image:
-    radial-gradient(ellipse 70% 55% at 80% 15%, rgba(39, 31, 134, 0.55) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 45% at 15% 85%, rgba(0, 194, 240, 0.10) 0%, transparent 65%),
-    radial-gradient(ellipse 40% 35% at 50% 0%, rgba(229, 182, 59, 0.08) 0%, transparent 60%);
+  background-color: #081120;
+  background-image: linear-gradient(180deg var(--in-oklab), #081120 0%, #0D1B33 100%);
 }
 
+/* Subtle Architectural Rule Grid (used sparingly) */
 .bg-tactical-grid {
   background-image:
-    linear-gradient(to right, rgba(229, 182, 59, 0.06) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(229, 182, 59, 0.06) 1px, transparent 1px);
-  background-size: 48px 48px;
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
 }
 
-/* Greek Key Meander Border Pattern inspired by the Atlantis Seal */
+/* Greek Key Meander Border Pattern from Official Atlantis Seal */
 .greek-key-rule {
-  height: 10px;
+  height: 8px;
   width: 100%;
   background-repeat: repeat-x;
   background-position: center;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='10' viewBox='0 0 24 10' fill='none'%3E%3Cpath d='M0 9H22V1H8V6H14V4H11V3H17V7H5V1H0' stroke='%23E5B63B' stroke-opacity='0.45' stroke-width='1.1'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='10' viewBox='0 0 24 10' fill='none'%3E%3Cpath d='M0 9H22V1H8V6H14V4H11V3H17V7H5V1H0' stroke='%23C89B2B' stroke-opacity='0.38' stroke-width='1'/%3E%3C/svg%3E");
 }
 
-/* Ambient Status Pulse — Opt-in only under no-preference reduced motion */
-@keyframes signal-pulse {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.45;
-    transform: scale(1.35);
-  }
-}
-
+/* Quiet Operational Status Indicator */
 .signal-dot {
   display: inline-block;
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 0.45rem;
+  height: 0.45rem;
   border-radius: 9999px;
-  background-color: var(--accent-cyan);
+  background-color: #34D399;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .signal-dot {
-    animation: signal-pulse 2.4s ease-in-out infinite;
-  }
+/* Balanced wrapping for filter/tag strips */
+.tag-row-balanced {
+  display: flex;
+  flex-wrap: wrap;
+  flex-wrap: balance;
+}
+
+/* Stable nested scroll containers */
+.scroll-panel-stable {
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  overscroll-behavior: contain;
+}
+
+/* Subgrid service cards for aligned titles, deliverables, and action bars */
+.service-subgrid-card {
+  display: grid;
+  grid-row: span 3;
+  grid-template-rows: auto 1fr auto;
+  grid-template-rows: subgrid;
 }
 
 /* ==========================================================================

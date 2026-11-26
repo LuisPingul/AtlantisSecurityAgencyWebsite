@@ -13,7 +13,7 @@ Establish a premier, enterprise-grade digital web platform for **Atlantis Securi
 - **Styling**: Tailwind CSS v4.1.0 (via `@tailwindcss/postcss`)
 - **Animations & Icons**: Framer Motion 12.6.0, Lucide React 0.487.0
 - **Package Manager**: npm 11.17.0 (Node.js runtime v24.19.0)
-- **Design Tokens**: Luxury Navy (`#060d1a`, `#0a1426`, `#0e1d38`), Deep Slate (`#162444`), Gold Accents (`#d4af37`, `#c59b27`, `#f3e5ab`), Greek-Key divider motifs, and crisp typography.
+- **Design Tokens**: Maritime Dress-Uniform Navy (`#081120`, `#0C182E`, `#122342`), Warm Editorial Stone (`#F5F3EE`), High-Contrast Ink (`#0B1324`), Muted Slate (`#475569`), and Restrained Heraldic Brass (`#C89B2B`, `#E3BC5A`, `#8A6510`), governed by `design-system/atlantis-security-agency/MASTER.md`.
 
 ---
 
@@ -22,10 +22,17 @@ Establish a premier, enterprise-grade digital web platform for **Atlantis Securi
 ```
 AtlantisSecurityAgency/
 ├── AGENTS.md                          # Mandatory agent instructions and protocols
+├── design-system/
+│   └── atlantis-security-agency/
+│       └── MASTER.md                  # Canonical UI/UX Pro Max design system rules
 ├── docs/                              # Persistent project tracking documentation
 │   ├── PROJECT_STATE.md               # Current architecture, features, and status
 │   ├── DECISIONS.md                   # Architectural Decision Records (ADRs)
 │   └── TASK_LOG.md                    # Chronological record of completed work
+├── graphify-out/                      # Persistent codebase & asset knowledge graph
+│   ├── GRAPH_REPORT.md                # Community hubs, god nodes, and audit report
+│   ├── graph.json                     # GraphRAG-ready knowledge graph data
+│   └── graph.html                     # Standalone interactive graph viewer
 ├── public/
 │   └── images/
 │       ├── brand/                     # Official insignia, emblems, and logos
@@ -87,6 +94,8 @@ AtlantisSecurityAgency/
 - [x] **Contact & Inquiries (`/contact`)**: Verified office address, phone numbers, verified corporate email (`qdynasty24@gmail.com`), and lightweight inquiry handoff form.
 - [x] **Vendor Accreditation Modal**: Reusable modal for viewing accreditation status and permits.
 - [x] **Removed Obsolete Content**: Removed the 40 FT ISO Container Security Checkpoint section as directed.
+- [x] **Editorial Anti-AI-Slop UI/UX & Ponytail Refinement**: Replaced purple/neon-cyan meshes, leaked slide numbers, and nested bubble cards with Maritime Dress-Uniform Navy & Warm Stone architectural ledgers, CSS `subgrid`, balanced typography, 44px touch targets, and `shortcut:` debt markers (`MASTER.md`).
+- [x] **Persistent Knowledge Graph (`graphify`)**: Generated 257-node / 475-edge knowledge graph across code, docs, and visual assets in `graphify-out/`.
 - [x] **Clean Verification**: TypeScript check (`npx tsc --noEmit`) and ESLint (`npm run lint`) both pass with zero errors.
 
 ---
